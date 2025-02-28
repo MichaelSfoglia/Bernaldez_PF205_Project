@@ -1,17 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package userpage;
 
-import adminpage.*;
 import java.awt.Color;
 import authentication.LoginForm;
 
-/**
- *
- * @author champ
- */
 public class DashboardUser extends javax.swing.JFrame {
 
     /**
@@ -184,7 +175,7 @@ public class DashboardUser extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Welcome User!");
-        members_container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 180, 40));
+        members_container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 40));
 
         dashboard_members.add(members_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 710, 380));
 
