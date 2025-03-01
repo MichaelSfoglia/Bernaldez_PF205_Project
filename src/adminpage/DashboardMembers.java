@@ -91,7 +91,7 @@ public class DashboardMembers extends javax.swing.JFrame {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, true, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {

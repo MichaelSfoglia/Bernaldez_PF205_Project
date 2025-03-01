@@ -19,22 +19,27 @@ public class LoginForm extends javax.swing.JFrame {
     
     static String status, type;
     
-    public static boolean loginAcc(String username, char[] password){
+    public static int loginAcc(String username, String password){
         dbConnector connector = new dbConnector();
         try{
-            String query = "SELECT * FROM dashboard_database WHERE member_name " +username+ " AND member_password " +Arrays.toString(password)+ "";
+            String query = "SELECT * FROM dashboard_members WHERE member_name '"+username+"' AND member_password '"+password+"'";
             ResultSet resultSet = connector.getData(query);
             if(resultSet.next()){
                 status = resultSet.getString("member_status");
                 type = resultSet.getString("member_position");
-                return true;
+                System.out.println("tests");
+                return 1;
             }
             else{
-                return false;
+                
+                System.out.println("tests");
+                return 0;
+                
             }
         }
         catch(SQLException ex){
-            return false;
+            System.out.println(""+ex);
+            return 0;
         }
     }
     /**
@@ -187,25 +192,28 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_login_exitButtonMouseClicked
 
     private void login_loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_loginButtonMouseClicked
-        if(loginAcc(login_nameField.getText(), login_passwordField.getPassword())){
-            if(!status.equals("Active")){
+        System.out.println("test");
+        if(loginAcc(login_nameField.getText(), login_passwordField.getText()) == 1){
+        if(status.equals("Active")){
             JOptionPane.showMessageDialog(null, "Inactive account, contact the admin!");
             }
             else{
-                if(type.equals("Admin")){
-                    JOptionPane.showMessageDialog(null, "Login Successfully!");
-                    DashboardAdmin adminPage = new DashboardAdmin();
-                    adminPage.setVisible(true);
-                    this.dispose();
-                }
-                else if(type.equals("User")){
-                    JOptionPane.showMessageDialog(null, "Login Successfully!");
-                    DashboardUser userPage = new DashboardUser();
-                    userPage.setVisible(true);
-                    this.dispose();
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "No account type found, contact the admin!");
+                switch (type) {
+                    case "Admin":
+                        JOptionPane.showMessageDialog(null, "Login Successfully!");
+                        DashboardAdmin adminPage = new DashboardAdmin();
+                        adminPage.setVisible(true);
+                        this.dispose();
+                        break;
+                    case "User":
+                        JOptionPane.showMessageDialog(null, "Login Successfully!");
+                        DashboardUser userPage = new DashboardUser();
+                        userPage.setVisible(true);
+                        this.dispose();
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "No account type found, contact the admin!");
+                        break;
                 }
                 
             }
