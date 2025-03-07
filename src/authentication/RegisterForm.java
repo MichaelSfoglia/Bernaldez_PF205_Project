@@ -238,10 +238,7 @@ public class RegisterForm extends javax.swing.JFrame {
         }
         else{
             dbConnector dbc = new dbConnector();
-            if(dbc.insertData("INSERT INTO dashboard_members (member_name, member_password, member_position, member_email, member_contact, member_status) "
-                    + "VALUES (" +register_nameField.getText()+ ", " +Arrays.toString(register_passwordField.getPassword()) 
-                    + ", " +register_typeBox.getSelectedItem()+ ", " +register_emailField.getText()+ ", " 
-                    + register_contactField.getText()+ ", 'Pending')")){
+            if(dbc.insertData("INSERT INTO dashboard_members (member_name, member_password, member_position, member_email, member_contact, member_status) VALUES ('" + register_nameField.getText() + "', '" + register_passwordField.getText() + "', '" + register_typeBox.getSelectedItem() + "', '" + register_emailField.getText() + "', '" + register_contactField.getText() + "', 'Pending')")){
                 JOptionPane.showMessageDialog(null, "Inserted Successfully!");
             }
             else{

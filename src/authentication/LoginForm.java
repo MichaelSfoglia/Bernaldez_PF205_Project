@@ -22,14 +22,15 @@ public class LoginForm extends javax.swing.JFrame {
     public static int loginAcc(String username, String password){
         dbConnector connector = new dbConnector();
         try{
-            String query = "SELECT * FROM dashboard_members WHERE member_name '"+username+"' AND member_password '"+password+"'";
+            String query = "SELECT * FROM dashboard_members WHERE member_name = '"+username+"' AND member_password =  '"+password+"'";
             ResultSet resultSet = connector.getData(query);
             if(resultSet.next()){
                 status = resultSet.getString("member_status");
                 type = resultSet.getString("member_position");
                 
                 Session sess = Session.getInstance();
-                sess.setName(resultSet.getString("member_id"));
+                sess.setId(resultSet.getInt("member_id"));
+                sess.setName(resultSet.getString("member_name"));
                 sess.setEmail(resultSet.getString("member_email"));
                 sess.setType(resultSet.getString("member_position"));
                 sess.setStatus(resultSet.getString("member_status"));
@@ -201,7 +202,7 @@ public class LoginForm extends javax.swing.JFrame {
     private void login_loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_loginButtonMouseClicked
         System.out.println("test");
         if(loginAcc(login_nameField.getText(), login_passwordField.getText()) == 1){
-        if(status.equals("Active")){
+        if(!status.equals("Active")){
             JOptionPane.showMessageDialog(null, "Inactive account, contact the admin!");
             }
             else{
@@ -222,7 +223,6 @@ public class LoginForm extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "No account type found, contact the admin!");
                         break;
                 }
-                
             }
         }
         else{
