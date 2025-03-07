@@ -1,10 +1,10 @@
 package authentication;
 
 import adminpage.DashboardAdmin;
+import config.Session;
 import config.dbConnector;
 import java.awt.Color;
 import java.sql.*;
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 import userpage.DashboardUser;
 
@@ -27,7 +27,14 @@ public class LoginForm extends javax.swing.JFrame {
             if(resultSet.next()){
                 status = resultSet.getString("member_status");
                 type = resultSet.getString("member_position");
-                System.out.println("tests");
+                
+                Session sess = Session.getInstance();
+                sess.setName(resultSet.getString("member_id"));
+                sess.setEmail(resultSet.getString("member_email"));
+                sess.setType(resultSet.getString("member_position"));
+                sess.setStatus(resultSet.getString("member_status"));
+                
+                System.out.println(""+sess.getId());
                 return 1;
             }
             else{

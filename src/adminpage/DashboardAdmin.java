@@ -2,6 +2,8 @@ package adminpage;
 
 import java.awt.Color;
 import authentication.LoginForm;
+import config.Session;
+import javax.swing.JOptionPane;
 
 public class DashboardAdmin extends javax.swing.JFrame {
 
@@ -39,6 +41,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_display = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         dashboard_members.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -262,6 +269,20 @@ public class DashboardAdmin extends javax.swing.JFrame {
     private void adminhome_logoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_logoutButtonMouseExited
         adminhome_logoutButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_adminhome_logoutButtonMouseExited
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        Session sess = Session.getInstance();
+        int member_id = sess.getId();
+        if(member_id == 0){
+            JOptionPane.showMessageDialog(null, "No account, login first!");
+            LoginForm lf = new LoginForm();
+            lf.setVisible(true);
+            this.dispose();
+        }
+        else{
+            adminhome_display.setText(""+sess.getName());
+        }
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
