@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/SCC24/OneDrive/Desktop/Bernaldez%202-D/Bernaldez_PF205_Project/src/adminpage/DashboardAdmin.java</file>
-            <file>file:/C:/Users/SCC24/OneDrive/Desktop/Bernaldez%202-D/Bernaldez_PF205_Project/src/config/Session.java</file>
-            <file>file:/C:/Users/SCC24/OneDrive/Desktop/Bernaldez%202-D/Bernaldez_PF205_Project/src/authentication/RegisterForm.java</file>
-            <file>file:/C:/Users/SCC24/OneDrive/Desktop/Bernaldez%202-D/Bernaldez_PF205_Project/src/adminpage/DashboardMembers.java</file>
-            <file>file:/C:/Users/SCC24/OneDrive/Desktop/Bernaldez%202-D/Bernaldez_PF205_Project/src/config/dbConnector.java</file>
-            <file>file:/C:/Users/SCC24/OneDrive/Desktop/Bernaldez%202-D/Bernaldez_PF205_Project/src/authentication/LoginForm.java</file>
+            <file>file:/C:/Users/PC17/Desktop/Bernaldez_PF205_Project/src/adminpage/DashboardMembers.java</file>
+            <file>file:/C:/Users/PC17/Desktop/Bernaldez_PF205_Project/src/userpage/DashboardUser.java</file>
+            <file>file:/C:/Users/PC17/Desktop/Bernaldez_PF205_Project/src/authentication/RegisterForm.java</file>
+            <file>file:/C:/Users/PC17/Desktop/Bernaldez_PF205_Project/src/adminpage/DashboardAdmin.java</file>
         </group>
     </open-files>
 </project-private>

@@ -3,7 +3,6 @@ package authentication;
 import config.dbConnector;
 import java.awt.Color;
 import java.sql.*;
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class RegisterForm extends javax.swing.JFrame {

@@ -1,9 +1,11 @@
 package adminpage;
 
+import authentication.RegisterForm;
 import config.dbConnector;
 import java.awt.Color;
 import javax.swing.*;
 import java.sql.*;
+import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 
 public class DashboardMembers extends javax.swing.JFrame {
@@ -259,25 +261,7 @@ public class DashboardMembers extends javax.swing.JFrame {
     }//GEN-LAST:event_members_backButtonMouseClicked
 
     private void members_createButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_createButtonMouseClicked
-        JTextField name = new JTextField();
-        JPasswordField pass = new JPasswordField();
-        JPasswordField confirm = new JPasswordField();
-        JComboBox type = new JComboBox();
         
-        Object[] message = {
-            "Name: ", name,
-            "Password: ", pass,
-            "Confirm Password: ", confirm,
-            "Type: ", type,
-            
-        };
-        int option = JOptionPane.showConfirmDialog(this, message, "Enter all your values", JOptionPane.OK_CANCEL_OPTION);
-        if (option == JOptionPane.OK_OPTION){
-            String value1 = name.getText();
-            String value2 = String.valueOf(pass.getPassword());
-            String value3 = type.getSelectedItem().toString();
-            String value4 = name.getText();
-        }
     }//GEN-LAST:event_members_createButtonMouseClicked
 
     private void members_createButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_createButtonMouseEntered
@@ -301,7 +285,16 @@ public class DashboardMembers extends javax.swing.JFrame {
     }//GEN-LAST:event_members_readButtonMouseExited
 
     private void members_updateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_updateButtonMouseClicked
-        // TODO add your handling code here:
+        int rowIndex = members_membersTable.getSelectedRow();
+        
+        TableModel tbl = members_membersTable.getModel();
+        
+        if(rowIndex < 0){
+            JOptionPane.showMessageDialog(null, "Please select an item!");
+        }
+        else{
+            
+        }
     }//GEN-LAST:event_members_updateButtonMouseClicked
 
     private void members_updateButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_updateButtonMouseEntered
