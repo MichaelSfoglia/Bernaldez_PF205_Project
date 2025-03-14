@@ -44,15 +44,13 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_header = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         members_container = new javax.swing.JPanel();
-        members_tableScroller = new javax.swing.JScrollPane();
+        members_tableModel = new javax.swing.JScrollPane();
         members_membersTable = new javax.swing.JTable();
         members_backButton = new javax.swing.JPanel();
         members_backLabel = new javax.swing.JLabel();
         members_filler = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         members_createButton = new javax.swing.JPanel();
         members_createLabel = new javax.swing.JLabel();
-        members_readButton = new javax.swing.JPanel();
-        members_readLabel = new javax.swing.JLabel();
         members_updateButton = new javax.swing.JPanel();
         members_updateLabel = new javax.swing.JLabel();
         members_deleteButton = new javax.swing.JPanel();
@@ -76,8 +74,8 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_container.setBackground(new java.awt.Color(183, 71, 52));
         members_container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        members_tableScroller.setBackground(new java.awt.Color(192, 132, 139));
-        members_tableScroller.setForeground(new java.awt.Color(255, 255, 255));
+        members_tableModel.setBackground(new java.awt.Color(192, 132, 139));
+        members_tableModel.setForeground(new java.awt.Color(255, 255, 255));
 
         members_membersTable.setBackground(new java.awt.Color(132, 72, 79));
         members_membersTable.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,9 +102,9 @@ public class DashboardMembers extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        members_tableScroller.setViewportView(members_membersTable);
+        members_tableModel.setViewportView(members_membersTable);
 
-        members_container.add(members_tableScroller, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 690, 300));
+        members_container.add(members_tableModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 690, 300));
 
         members_backButton.setBackground(new java.awt.Color(132, 72, 79));
         members_backButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -155,29 +153,6 @@ public class DashboardMembers extends javax.swing.JFrame {
 
         members_container.add(members_createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 130, 50));
 
-        members_readButton.setBackground(new java.awt.Color(132, 72, 79));
-        members_readButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        members_readButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                members_readButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                members_readButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                members_readButtonMouseExited(evt);
-            }
-        });
-        members_readButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        members_readLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        members_readLabel.setForeground(new java.awt.Color(255, 255, 255));
-        members_readLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        members_readLabel.setText("Read");
-        members_readButton.add(members_readLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
-
-        members_container.add(members_readButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 130, 50));
-
         members_updateButton.setBackground(new java.awt.Color(132, 72, 79));
         members_updateButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
         members_updateButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -199,7 +174,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_updateLabel.setText("Update");
         members_updateButton.add(members_updateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(members_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 130, 50));
+        members_container.add(members_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 130, 50));
 
         members_deleteButton.setBackground(new java.awt.Color(132, 72, 79));
         members_deleteButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -222,7 +197,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_deleteLabel.setText("Delete");
         members_deleteButton.add(members_deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(members_deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 130, 50));
+        members_container.add(members_deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 130, 50));
 
         dashboard_members.add(members_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 710, 380));
 
@@ -261,7 +236,9 @@ public class DashboardMembers extends javax.swing.JFrame {
     }//GEN-LAST:event_members_backButtonMouseClicked
 
     private void members_createButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_createButtonMouseClicked
-        
+        DashboardCreate create = new DashboardCreate();
+        create.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_members_createButtonMouseClicked
 
     private void members_createButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_createButtonMouseEntered
@@ -272,28 +249,27 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_createButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_members_createButtonMouseExited
 
-    private void members_readButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_readButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_members_readButtonMouseClicked
-
-    private void members_readButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_readButtonMouseEntered
-        members_readButton.setBackground(new Color(192, 132, 139));
-    }//GEN-LAST:event_members_readButtonMouseEntered
-
-    private void members_readButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_readButtonMouseExited
-        members_readButton.setBackground(new Color(132, 72, 79));
-    }//GEN-LAST:event_members_readButtonMouseExited
-
     private void members_updateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_updateButtonMouseClicked
         int rowIndex = members_membersTable.getSelectedRow();
-        
-        TableModel tbl = members_membersTable.getModel();
         
         if(rowIndex < 0){
             JOptionPane.showMessageDialog(null, "Please select an item!");
         }
         else{
-            
+            try{
+                dbConnector dbc = new dbConnector();
+                TableModel tbl = members_membersTable.getModel();
+                ResultSet rs = dbc.getData("SELECT * FROM ");
+                if(rs.next()){
+                    DashboardCreate create = new DashboardCreate();
+                    create.create_nameField.setText("member_username");
+                    create.setVisible(true);
+                    this.dispose();
+                }
+            }
+            catch(SQLException ex){
+                System.out.println("" + ex);
+            }
         }
     }//GEN-LAST:event_members_updateButtonMouseClicked
 
@@ -372,9 +348,7 @@ public class DashboardMembers extends javax.swing.JFrame {
     private javax.swing.Box.Filler members_filler;
     private javax.swing.JPanel members_header;
     private javax.swing.JTable members_membersTable;
-    private javax.swing.JPanel members_readButton;
-    private javax.swing.JLabel members_readLabel;
-    private javax.swing.JScrollPane members_tableScroller;
+    private javax.swing.JScrollPane members_tableModel;
     private javax.swing.JPanel members_updateButton;
     private javax.swing.JLabel members_updateLabel;
     // End of variables declaration//GEN-END:variables
