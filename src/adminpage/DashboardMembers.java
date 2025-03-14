@@ -1,6 +1,5 @@
 package adminpage;
 
-import authentication.RegisterForm;
 import config.dbConnector;
 import java.awt.Color;
 import javax.swing.*;
@@ -91,7 +90,7 @@ public class DashboardMembers extends javax.swing.JFrame {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, false, false, true
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -256,13 +255,21 @@ public class DashboardMembers extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please select an item!");
         }
         else{
+            DashboardCreate create = new DashboardCreate();
             try{
                 dbConnector dbc = new dbConnector();
                 TableModel tbl = members_membersTable.getModel();
-                ResultSet rs = dbc.getData("SELECT * FROM ");
-                if(rs.next()){
-                    DashboardCreate create = new DashboardCreate();
+                ResultSet rs = dbc.getData("SELECT * FROM dashboard_members WHERE member_id = "+tbl.getValueAt(rowIndex, 0) +"");
+                if(rs.next()){                
                     create.create_nameField.setText("member_username");
+                    create.create_passwordField.setText("member_password");
+                    create.create_typeBox.setSelectedItem(""+rs.getString("member_position"));
+                    create.create_emailField.setText("member_email");
+                    create.create_contactField.setText("member_email");
+                    create.create_statusBox.setSelectedItem(""+rs.getString("member_status"));
+                    create.create_addButton.setEnabled(false);
+                    create.create_updateButton.setEnabled(false);
+                    
                     create.setVisible(true);
                     this.dispose();
                 }

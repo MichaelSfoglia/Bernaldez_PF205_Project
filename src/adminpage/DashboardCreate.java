@@ -45,7 +45,7 @@ public class DashboardCreate extends javax.swing.JFrame {
             return false;
         }
     }
-    DashboardAdmin admin = new DashboardAdmin();
+    DashboardMembers members = new DashboardMembers();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,10 +76,14 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_confirmField = new javax.swing.JPasswordField();
         create_statusBox = new javax.swing.JComboBox<>();
         create_statusLabel = new javax.swing.JLabel();
-        create_cancelButton1 = new javax.swing.JPanel();
+        create_updateButton = new javax.swing.JPanel();
         create_cancelLabel1 = new javax.swing.JLabel();
         create_addButton1 = new javax.swing.JPanel();
         create_addLabel1 = new javax.swing.JLabel();
+        create_clearButton = new javax.swing.JPanel();
+        create_clearLabel = new javax.swing.JLabel();
+        create_refreshButton = new javax.swing.JPanel();
+        create_refreshLabel = new javax.swing.JLabel();
         create_headerContainer = new javax.swing.JPanel();
         create_title = new javax.swing.JLabel();
 
@@ -90,7 +94,7 @@ public class DashboardCreate extends javax.swing.JFrame {
 
         create_imageContainer.setBackground(new java.awt.Color(132, 71, 71));
         create_imageContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        registerContainer.add(create_imageContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 190, 420));
+        registerContainer.add(create_imageContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 190, 450));
 
         create_formContainer.setBackground(new java.awt.Color(183, 71, 52));
         create_formContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -163,7 +167,7 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_cancelLabel.setText("Cancel");
         create_cancelButton.add(create_cancelLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 80, 20));
+        create_formContainer.add(create_cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 80, 20));
 
         create_addButton.setBackground(new java.awt.Color(132, 72, 79));
         create_addButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -186,7 +190,7 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_addLabel.setText("Add");
         create_addButton.add(create_addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 80, 20));
+        create_formContainer.add(create_addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 80, 20));
 
         create_confirmLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create_confirmLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,28 +211,28 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_statusLabel.setText("Status");
         create_formContainer.add(create_statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 20));
 
-        create_cancelButton1.setBackground(new java.awt.Color(132, 72, 79));
-        create_cancelButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        create_cancelButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        create_updateButton.setBackground(new java.awt.Color(132, 72, 79));
+        create_updateButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        create_updateButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                create_cancelButton1MouseClicked(evt);
+                create_updateButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                create_cancelButton1MouseEntered(evt);
+                create_updateButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                create_cancelButton1MouseExited(evt);
+                create_updateButtonMouseExited(evt);
             }
         });
-        create_cancelButton1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        create_updateButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         create_cancelLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create_cancelLabel1.setForeground(new java.awt.Color(255, 255, 255));
         create_cancelLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         create_cancelLabel1.setText("Update");
-        create_cancelButton1.add(create_cancelLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
+        create_updateButton.add(create_cancelLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_cancelButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 80, 20));
+        create_formContainer.add(create_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 80, 20));
 
         create_addButton1.setBackground(new java.awt.Color(132, 72, 79));
         create_addButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -251,9 +255,55 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_addLabel1.setText("Delete");
         create_addButton1.add(create_addLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_addButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 80, 20));
+        create_formContainer.add(create_addButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, 80, 20));
 
-        registerContainer.add(create_formContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 190, 420));
+        create_clearButton.setBackground(new java.awt.Color(132, 72, 79));
+        create_clearButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        create_clearButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                create_clearButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                create_clearButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                create_clearButtonMouseExited(evt);
+            }
+        });
+        create_clearButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        create_clearLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        create_clearLabel.setForeground(new java.awt.Color(255, 255, 255));
+        create_clearLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        create_clearLabel.setText("Clear");
+        create_clearButton.add(create_clearLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
+
+        create_formContainer.add(create_clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 80, 20));
+
+        create_refreshButton.setBackground(new java.awt.Color(132, 72, 79));
+        create_refreshButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        create_refreshButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                create_refreshButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                create_refreshButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                create_refreshButtonMouseExited(evt);
+            }
+        });
+        create_refreshButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        create_refreshLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        create_refreshLabel.setForeground(new java.awt.Color(255, 255, 255));
+        create_refreshLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        create_refreshLabel.setText("Refresh");
+        create_refreshButton.add(create_refreshLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
+
+        create_formContainer.add(create_refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 80, 20));
+
+        registerContainer.add(create_formContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 190, 450));
 
         create_headerContainer.setBackground(new java.awt.Color(121, 51, 65));
         create_headerContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -274,16 +324,14 @@ public class DashboardCreate extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(registerContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(registerContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void create_cancelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_cancelButtonMouseClicked
-        admin.setVisible(true);
+        members.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_create_cancelButtonMouseClicked
 
@@ -303,7 +351,7 @@ public class DashboardCreate extends javax.swing.JFrame {
             if(dbc.insertData("INSERT INTO dashboard_members (member_name, member_password, member_position, member_email, member_contact, member_status) VALUES ('" + create_nameField.getText() + "', '" + create_passwordField.getText() + "', '" + create_typeBox.getSelectedItem() + "', '" + create_emailField.getText() + "', '" + create_contactField.getText() + "', 'Pending')")){
                 JOptionPane.showMessageDialog(null, "Registered Successfully!");
                 
-                admin.setVisible(true);
+                members.setVisible(true);
                 this.dispose();
             }
             else{
@@ -340,17 +388,41 @@ public class DashboardCreate extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_create_addButton1MouseExited
 
-    private void create_cancelButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_cancelButton1MouseClicked
+    private void create_updateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_updateButtonMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_create_cancelButton1MouseClicked
+    }//GEN-LAST:event_create_updateButtonMouseClicked
 
-    private void create_cancelButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_cancelButton1MouseEntered
+    private void create_updateButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_updateButtonMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_create_cancelButton1MouseEntered
+    }//GEN-LAST:event_create_updateButtonMouseEntered
 
-    private void create_cancelButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_cancelButton1MouseExited
+    private void create_updateButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_updateButtonMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_create_cancelButton1MouseExited
+    }//GEN-LAST:event_create_updateButtonMouseExited
+
+    private void create_clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_clearButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_clearButtonMouseClicked
+
+    private void create_clearButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_clearButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_clearButtonMouseEntered
+
+    private void create_clearButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_clearButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_clearButtonMouseExited
+
+    private void create_refreshButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_refreshButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_refreshButtonMouseClicked
+
+    private void create_refreshButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_refreshButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_refreshButtonMouseEntered
+
+    private void create_refreshButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_refreshButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_refreshButtonMouseExited
 
     /**
      * @param args the command line arguments
@@ -391,32 +463,36 @@ public class DashboardCreate extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel create_addButton;
+    public javax.swing.JPanel create_addButton;
     private javax.swing.JPanel create_addButton1;
     private javax.swing.JLabel create_addLabel;
     private javax.swing.JLabel create_addLabel1;
     private javax.swing.JPanel create_cancelButton;
-    private javax.swing.JPanel create_cancelButton1;
     private javax.swing.JLabel create_cancelLabel;
     private javax.swing.JLabel create_cancelLabel1;
+    private javax.swing.JPanel create_clearButton;
+    private javax.swing.JLabel create_clearLabel;
     private javax.swing.JPasswordField create_confirmField;
     private javax.swing.JLabel create_confirmLabel;
-    private javax.swing.JTextField create_contactField;
+    public javax.swing.JTextField create_contactField;
     private javax.swing.JLabel create_contactLabel;
-    private javax.swing.JTextField create_emailField;
+    public javax.swing.JTextField create_emailField;
     private javax.swing.JLabel create_emailLabel;
     private javax.swing.JPanel create_formContainer;
     private javax.swing.JPanel create_headerContainer;
     private javax.swing.JPanel create_imageContainer;
-    private javax.swing.JTextField create_nameField;
+    public javax.swing.JTextField create_nameField;
     private javax.swing.JLabel create_nameLabel;
-    private javax.swing.JPasswordField create_passwordField;
+    public javax.swing.JPasswordField create_passwordField;
     private javax.swing.JLabel create_passwordLabel;
-    private javax.swing.JComboBox<String> create_statusBox;
+    private javax.swing.JPanel create_refreshButton;
+    private javax.swing.JLabel create_refreshLabel;
+    public javax.swing.JComboBox<String> create_statusBox;
     private javax.swing.JLabel create_statusLabel;
     private javax.swing.JLabel create_title;
-    private javax.swing.JComboBox<String> create_typeBox;
+    public javax.swing.JComboBox<String> create_typeBox;
     private javax.swing.JLabel create_typeLabel;
+    public javax.swing.JPanel create_updateButton;
     private javax.swing.JPanel registerContainer;
     // End of variables declaration//GEN-END:variables
 }
