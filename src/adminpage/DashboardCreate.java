@@ -2,7 +2,18 @@ package adminpage;
 
 import config.dbConnector;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class DashboardCreate extends javax.swing.JFrame {
@@ -15,6 +26,60 @@ public class DashboardCreate extends javax.swing.JFrame {
     }
     
     public static String email, username;
+    public String destination = "", oldpath, path;
+    File selectedFile;
+    
+    public int FileExistenceChecker(String path){
+        File file = new File(path);
+        String fileName = file.getName();
+        
+        Path filePath = Paths.get("src/images", fileName);
+        boolean fileExists = Files.exists(filePath);
+        
+        if (fileExists) {
+            return 1;
+        } else {
+            return 0;
+        }
+    
+    }
+    
+    public static int getHeightFromWidth(String imagePath, int desiredWidth) {
+        try {
+            // Read the image file
+            File imageFile = new File(imagePath);
+            BufferedImage image = ImageIO.read(imageFile);
+            
+            // Get the original width and height of the image
+            int originalWidth = image.getWidth();
+            int originalHeight = image.getHeight();
+            
+            // Calculate the new height based on the desired width and the aspect ratio
+            int newHeight = (int) ((double) desiredWidth / originalWidth * originalHeight);
+            
+            return newHeight;
+        } catch (IOException ex) {
+            System.out.println("No image found!");
+        }
+        
+        return -1;
+    }
+    
+    public ImageIcon ResizeImage(String ImagePath, byte[] pic, JLabel label) {
+        ImageIcon MyImage = null;
+        if(ImagePath !=null){
+            MyImage = new ImageIcon(ImagePath);
+        }else{
+            MyImage = new ImageIcon(pic);
+        }
+        
+        int newHeight = getHeightFromWidth(ImagePath, label.getWidth());
+
+        Image img = MyImage.getImage();
+        Image newImg = img.getScaledInstance(label.getWidth(), newHeight, Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon(newImg);
+        return image;
+    }
 
     public boolean duplicateCheck(){
         dbConnector dbc = new dbConnector();
@@ -87,6 +152,11 @@ public class DashboardCreate extends javax.swing.JFrame {
 
         registerContainer = new javax.swing.JPanel();
         create_imageContainer = new javax.swing.JPanel();
+        create_imageArea = new javax.swing.JLabel();
+        create_selectimageButton = new javax.swing.JPanel();
+        create_selectimageLabel = new javax.swing.JLabel();
+        create_removeimageButton = new javax.swing.JPanel();
+        create_create_removeLabel = new javax.swing.JLabel();
         create_formContainer = new javax.swing.JPanel();
         create_nameLabel = new javax.swing.JLabel();
         create_nameField = new javax.swing.JTextField();
@@ -126,6 +196,59 @@ public class DashboardCreate extends javax.swing.JFrame {
 
         create_imageContainer.setBackground(new java.awt.Color(132, 71, 71));
         create_imageContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        create_imageArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        create_imageArea.setForeground(new java.awt.Color(255, 255, 255));
+        create_imageArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        create_imageArea.setText("[IMAGE HERE]");
+        create_imageContainer.add(create_imageArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 180));
+
+        create_selectimageButton.setBackground(new java.awt.Color(132, 72, 79));
+        create_selectimageButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        create_selectimageButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                create_selectimageButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                create_selectimageButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                create_selectimageButtonMouseExited(evt);
+            }
+        });
+        create_selectimageButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        create_selectimageLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        create_selectimageLabel.setForeground(new java.awt.Color(255, 255, 255));
+        create_selectimageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        create_selectimageLabel.setText("Select");
+        create_selectimageButton.add(create_selectimageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
+
+        create_imageContainer.add(create_selectimageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 80, 20));
+
+        create_removeimageButton.setBackground(new java.awt.Color(132, 72, 79));
+        create_removeimageButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        create_removeimageButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                create_removeimageButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                create_removeimageButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                create_removeimageButtonMouseExited(evt);
+            }
+        });
+        create_removeimageButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        create_create_removeLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        create_create_removeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        create_create_removeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        create_create_removeLabel.setText("Remove");
+        create_removeimageButton.add(create_create_removeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
+
+        create_imageContainer.add(create_removeimageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 80, 20));
+
         registerContainer.add(create_imageContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 190, 500));
 
         create_formContainer.setBackground(new java.awt.Color(183, 71, 52));
@@ -487,6 +610,54 @@ public class DashboardCreate extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_create_refreshButtonMouseExited
 
+    private void create_selectimageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_selectimageButtonMouseClicked
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+        try {
+            selectedFile = fileChooser.getSelectedFile();
+            destination = "src/images/" + selectedFile.getName();
+            path  = selectedFile.getAbsolutePath();
+
+            if(FileExistenceChecker(path) == 1){
+                JOptionPane.showMessageDialog(null, "File Already Exist, Rename or Choose another!");
+               destination = "";
+                path="";
+            }else{
+                create_imageArea.setIcon(ResizeImage(path, null, create_imageArea));
+                create_selectimageButton.setEnabled(false);
+                create_removeimageButton.setEnabled(true);
+            }
+        } catch (Exception ex) {
+            System.out.println("File Error!");
+        }
+        }
+    }//GEN-LAST:event_create_selectimageButtonMouseClicked
+
+    private void create_selectimageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_selectimageButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_selectimageButtonMouseEntered
+
+    private void create_selectimageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_selectimageButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_selectimageButtonMouseExited
+
+    private void create_removeimageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_removeimageButtonMouseClicked
+        create_removeimageButton.setEnabled(false);
+        create_selectimageButton.setEnabled(true);
+        create_imageArea.setIcon(null);
+        destination = "";
+        path = "";
+    }//GEN-LAST:event_create_removeimageButtonMouseClicked
+
+    private void create_removeimageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_removeimageButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_removeimageButtonMouseEntered
+
+    private void create_removeimageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_removeimageButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_create_removeimageButtonMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -539,12 +710,14 @@ public class DashboardCreate extends javax.swing.JFrame {
     private javax.swing.JLabel create_confirmLabel;
     public javax.swing.JTextField create_contactField;
     private javax.swing.JLabel create_contactLabel;
+    private javax.swing.JLabel create_create_removeLabel;
     public javax.swing.JTextField create_emailField;
     private javax.swing.JLabel create_emailLabel;
     private javax.swing.JPanel create_formContainer;
     private javax.swing.JPanel create_headerContainer;
     public javax.swing.JTextField create_idField;
     private javax.swing.JLabel create_idLabel;
+    private javax.swing.JLabel create_imageArea;
     private javax.swing.JPanel create_imageContainer;
     public javax.swing.JTextField create_nameField;
     private javax.swing.JLabel create_nameLabel;
@@ -552,6 +725,9 @@ public class DashboardCreate extends javax.swing.JFrame {
     private javax.swing.JLabel create_passwordLabel;
     private javax.swing.JPanel create_refreshButton;
     private javax.swing.JLabel create_refreshLabel;
+    public javax.swing.JPanel create_removeimageButton;
+    public javax.swing.JPanel create_selectimageButton;
+    private javax.swing.JLabel create_selectimageLabel;
     public javax.swing.JComboBox<String> create_statusBox;
     private javax.swing.JLabel create_statusLabel;
     private javax.swing.JLabel create_title;

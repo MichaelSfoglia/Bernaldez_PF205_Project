@@ -29,7 +29,7 @@ public class LoginForm extends javax.swing.JFrame {
             ResultSet resultSet = connector.getData(query);
             if(resultSet.next()){
                 
-                try{
+               
                     String hashedPass = resultSet.getString("member_password");
                     String rehashedPass = passwordHasher.hashPassword(password);
                     
@@ -54,16 +54,12 @@ public class LoginForm extends javax.swing.JFrame {
                         return 0;
                     }
                 }
-                catch(NoSuchAlgorithmException ex){
-                    System.out.println(""+ex);
-                    return 0;
-                }
-            }
             else{
                 return 0;
             }
-        }
-        catch(SQLException | NoSuchAlgorithmException ex){
+        }catch(SQLException | NoSuchAlgorithmException ex){
+               System.out.println(""+ex);
+                   
             return 0;
         }
     }
@@ -217,7 +213,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_login_exitButtonMouseClicked
 
     private void login_loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_loginButtonMouseClicked
-        System.out.println("test");
+      
         if(loginAcc(login_nameField.getText(), login_passwordField.getText()) == 1){
         if(!status.equals("Active")){
             JOptionPane.showMessageDialog(null, "Inactive account, contact the admin!");

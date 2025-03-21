@@ -47,7 +47,6 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_membersTable = new javax.swing.JTable();
         members_backButton = new javax.swing.JPanel();
         members_backLabel = new javax.swing.JLabel();
-        members_filler = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         members_createButton = new javax.swing.JPanel();
         members_createLabel = new javax.swing.JLabel();
         members_updateButton = new javax.swing.JPanel();
@@ -127,7 +126,6 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_backButton.add(members_backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
         members_container.add(members_backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 130, 50));
-        members_container.add(members_filler, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, -30, 10, 410));
 
         members_createButton.setBackground(new java.awt.Color(132, 72, 79));
         members_createButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -150,7 +148,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_createLabel.setText("Create");
         members_createButton.add(members_createLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(members_createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 130, 50));
+        members_container.add(members_createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 130, 50));
 
         members_updateButton.setBackground(new java.awt.Color(132, 72, 79));
         members_updateButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -173,7 +171,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_updateLabel.setText("Update");
         members_updateButton.add(members_updateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(members_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 130, 50));
+        members_container.add(members_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 130, 50));
 
         members_deleteButton.setBackground(new java.awt.Color(132, 72, 79));
         members_deleteButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -196,7 +194,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_deleteLabel.setText("Delete");
         members_deleteButton.add(members_deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(members_deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 130, 50));
+        members_container.add(members_deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 130, 50));
 
         dashboard_members.add(members_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 710, 380));
 
@@ -238,6 +236,9 @@ public class DashboardMembers extends javax.swing.JFrame {
         DashboardCreate create = new DashboardCreate();
         create.setVisible(true);
         this.dispose();
+        
+        create.create_removeimageButton.setEnabled(false);
+        create.create_selectimageButton.setEnabled(true);
     }//GEN-LAST:event_members_createButtonMouseClicked
 
     private void members_createButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_createButtonMouseEntered
@@ -352,7 +353,6 @@ public class DashboardMembers extends javax.swing.JFrame {
     private javax.swing.JLabel members_createLabel;
     private javax.swing.JPanel members_deleteButton;
     private javax.swing.JLabel members_deleteLabel;
-    private javax.swing.Box.Filler members_filler;
     private javax.swing.JPanel members_header;
     private javax.swing.JTable members_membersTable;
     private javax.swing.JScrollPane members_tableModel;

@@ -5,6 +5,8 @@ import config.passwordHasher;
 import java.awt.Color;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class RegisterForm extends javax.swing.JFrame {
@@ -68,12 +70,12 @@ public class RegisterForm extends javax.swing.JFrame {
         register_emailLabel = new javax.swing.JLabel();
         register_emailField = new javax.swing.JTextField();
         register_contactLabel = new javax.swing.JLabel();
+        register_confirmLabel = new javax.swing.JLabel();
         register_contactField = new javax.swing.JTextField();
         register_cancelButton = new javax.swing.JPanel();
         register_cancelLabel = new javax.swing.JLabel();
         register_registerButton = new javax.swing.JPanel();
         register_registerLabel = new javax.swing.JLabel();
-        register_confirmLabel = new javax.swing.JLabel();
         register_confirmField = new javax.swing.JPasswordField();
         register_headerContainer = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -133,6 +135,11 @@ public class RegisterForm extends javax.swing.JFrame {
         register_contactLabel.setText("Contact Number:");
         register_formContainer.add(register_contactLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 20));
 
+        register_confirmLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        register_confirmLabel.setForeground(new java.awt.Color(255, 255, 255));
+        register_confirmLabel.setText("Confirm Password:");
+        register_formContainer.add(register_confirmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
+
         register_contactField.setBackground(new java.awt.Color(192, 132, 139));
         register_contactField.setForeground(new java.awt.Color(255, 255, 255));
         register_formContainer.add(register_contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 170, 30));
@@ -183,11 +190,6 @@ public class RegisterForm extends javax.swing.JFrame {
 
         register_formContainer.add(register_registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 80, 20));
 
-        register_confirmLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        register_confirmLabel.setForeground(new java.awt.Color(255, 255, 255));
-        register_confirmLabel.setText("Confirm Password:");
-        register_formContainer.add(register_confirmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
-
         register_confirmField.setBackground(new java.awt.Color(192, 132, 139));
         register_confirmField.setForeground(new java.awt.Color(255, 255, 255));
         register_formContainer.add(register_confirmField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 170, 30));
@@ -227,6 +229,8 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_register_cancelButtonMouseClicked
 
     private void register_registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_register_registerButtonMouseClicked
+      
+        
         if(register_nameField.getText().isEmpty() && register_passwordField.getPassword().length == 0 
                 && register_emailField.getText().isEmpty() && register_contactField.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "All fields are required!");
@@ -238,10 +242,13 @@ public class RegisterForm extends javax.swing.JFrame {
             System.out.println("Duplicate exists");
         }
         else{
+            
             dbConnector dbc = new dbConnector();
             
             try{
                 String pass = passwordHasher.hashPassword(register_passwordField.getText());
+               
+       
                 
                 if(dbc.insertData("INSERT INTO dashboard_members (member_name, member_password, member_position, member_email, member_contact, member_status) VALUES ('" + register_nameField.getText() + "', '" + pass + "', '" + register_typeBox.getSelectedItem() + "', '" + register_emailField.getText() + "', '" + register_contactField.getText() + "', 'Pending')")){
                     JOptionPane.showMessageDialog(null, "Inserted Successfully!");

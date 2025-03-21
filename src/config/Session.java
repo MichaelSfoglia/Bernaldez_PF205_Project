@@ -3,7 +3,7 @@ package config;
 public class Session {
     public static Session instance;
     public String name, email, type, status;
-    public int id;
+    public int id, contact;
 
     public static synchronized Session getInstance() {
         if(instance == null){
@@ -56,5 +56,11 @@ public class Session {
         this.status = status;
     }
     
+    public void setContact(int contact) {
+        this.contact = contact;
+    }
     
+    public int getContact() {
+        return contact;
+    }
 }

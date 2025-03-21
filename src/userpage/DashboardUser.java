@@ -25,20 +25,20 @@ public class DashboardUser extends javax.swing.JFrame {
     private void initComponents() {
 
         dashboard_members = new javax.swing.JPanel();
-        members_header = new javax.swing.JPanel();
+        users_header = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        members_container = new javax.swing.JPanel();
-        adminhome_membersButton = new javax.swing.JPanel();
-        adminhome_membersLabel = new javax.swing.JLabel();
+        users_container = new javax.swing.JPanel();
+        users_membersButton = new javax.swing.JPanel();
+        users_accountLabel = new javax.swing.JLabel();
         adminhome_filler = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        adminhome_productsButton = new javax.swing.JPanel();
-        adminhome_productsLabel = new javax.swing.JLabel();
-        adminhome_unnamedButton3 = new javax.swing.JPanel();
-        adminhome_unnamedLabel3 = new javax.swing.JLabel();
-        adminhome_logoutButton = new javax.swing.JPanel();
-        adminhome_logoutLabel = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        adminhome_nameDisplay = new javax.swing.JLabel();
+        users_productsButton = new javax.swing.JPanel();
+        users_productsLabel = new javax.swing.JLabel();
+        users_unnamedButton3 = new javax.swing.JPanel();
+        users_unnamedLabel3 = new javax.swing.JLabel();
+        users_logoutButton = new javax.swing.JPanel();
+        users_logoutLabel = new javax.swing.JLabel();
+        users_imageContainer = new javax.swing.JPanel();
+        users_nameDisplay = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,132 +50,132 @@ public class DashboardUser extends javax.swing.JFrame {
 
         dashboard_members.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        members_header.setBackground(new java.awt.Color(121, 51, 65));
-        members_header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        users_header.setBackground(new java.awt.Color(121, 51, 65));
+        users_header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Home");
-        members_header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 170, 10));
+        users_header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 170, 10));
 
-        dashboard_members.add(members_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 30));
+        dashboard_members.add(users_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 30));
 
-        members_container.setBackground(new java.awt.Color(183, 71, 52));
-        members_container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        users_container.setBackground(new java.awt.Color(183, 71, 52));
+        users_container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        adminhome_membersButton.setBackground(new java.awt.Color(132, 72, 79));
-        adminhome_membersButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        adminhome_membersButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        users_membersButton.setBackground(new java.awt.Color(132, 72, 79));
+        users_membersButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        users_membersButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminhome_membersButtonMouseClicked(evt);
+                users_membersButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                adminhome_membersButtonMouseEntered(evt);
+                users_membersButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                adminhome_membersButtonMouseExited(evt);
+                users_membersButtonMouseExited(evt);
             }
         });
-        adminhome_membersButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        users_membersButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        adminhome_membersLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        adminhome_membersLabel.setForeground(new java.awt.Color(255, 255, 255));
-        adminhome_membersLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminhome_membersLabel.setText("Members");
-        adminhome_membersButton.add(adminhome_membersLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
+        users_accountLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        users_accountLabel.setForeground(new java.awt.Color(255, 255, 255));
+        users_accountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        users_accountLabel.setText("Account");
+        users_membersButton.add(users_accountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_membersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 50));
-        members_container.add(adminhome_filler, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, -30, 10, 410));
+        users_container.add(users_membersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 50));
+        users_container.add(adminhome_filler, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, -30, 10, 410));
 
-        adminhome_productsButton.setBackground(new java.awt.Color(132, 72, 79));
-        adminhome_productsButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        adminhome_productsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        users_productsButton.setBackground(new java.awt.Color(132, 72, 79));
+        users_productsButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        users_productsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminhome_productsButtonMouseClicked(evt);
+                users_productsButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                adminhome_productsButtonMouseEntered(evt);
+                users_productsButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                adminhome_productsButtonMouseExited(evt);
+                users_productsButtonMouseExited(evt);
             }
         });
-        adminhome_productsButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        users_productsButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        adminhome_productsLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        adminhome_productsLabel.setForeground(new java.awt.Color(255, 255, 255));
-        adminhome_productsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminhome_productsLabel.setText("Products");
-        adminhome_productsButton.add(adminhome_productsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
+        users_productsLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        users_productsLabel.setForeground(new java.awt.Color(255, 255, 255));
+        users_productsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        users_productsLabel.setText("Products");
+        users_productsButton.add(users_productsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 50));
+        users_container.add(users_productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 50));
 
-        adminhome_unnamedButton3.setBackground(new java.awt.Color(132, 72, 79));
-        adminhome_unnamedButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        adminhome_unnamedButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        users_unnamedButton3.setBackground(new java.awt.Color(132, 72, 79));
+        users_unnamedButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        users_unnamedButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminhome_unnamedButton3MouseClicked(evt);
+                users_unnamedButton3MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                adminhome_unnamedButton3MouseEntered(evt);
+                users_unnamedButton3MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                adminhome_unnamedButton3MouseExited(evt);
+                users_unnamedButton3MouseExited(evt);
             }
         });
-        adminhome_unnamedButton3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        users_unnamedButton3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        adminhome_unnamedLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        adminhome_unnamedLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        adminhome_unnamedLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminhome_unnamedLabel3.setText("-");
-        adminhome_unnamedButton3.add(adminhome_unnamedLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
+        users_unnamedLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        users_unnamedLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        users_unnamedLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        users_unnamedLabel3.setText("-");
+        users_unnamedButton3.add(users_unnamedLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_unnamedButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 50));
+        users_container.add(users_unnamedButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 50));
 
-        adminhome_logoutButton.setBackground(new java.awt.Color(132, 72, 79));
-        adminhome_logoutButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        adminhome_logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        users_logoutButton.setBackground(new java.awt.Color(132, 72, 79));
+        users_logoutButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        users_logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminhome_logoutButtonMouseClicked(evt);
+                users_logoutButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                adminhome_logoutButtonMouseEntered(evt);
+                users_logoutButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                adminhome_logoutButtonMouseExited(evt);
+                users_logoutButtonMouseExited(evt);
             }
         });
-        adminhome_logoutButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        users_logoutButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        adminhome_logoutLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        adminhome_logoutLabel.setForeground(new java.awt.Color(255, 255, 255));
-        adminhome_logoutLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminhome_logoutLabel.setText("Logout");
-        adminhome_logoutButton.add(adminhome_logoutLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
+        users_logoutLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        users_logoutLabel.setForeground(new java.awt.Color(255, 255, 255));
+        users_logoutLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        users_logoutLabel.setText("Logout");
+        users_logoutButton.add(users_logoutLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 130, 50));
+        users_container.add(users_logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 130, 50));
 
-        jPanel1.setBackground(new java.awt.Color(132, 72, 79));
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 132, 139), 1, true));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        users_imageContainer.setBackground(new java.awt.Color(132, 72, 79));
+        users_imageContainer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 132, 139), 1, true));
+        users_imageContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        adminhome_nameDisplay.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        adminhome_nameDisplay.setForeground(new java.awt.Color(255, 255, 255));
-        adminhome_nameDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminhome_nameDisplay.setText("[NAME]");
-        jPanel1.add(adminhome_nameDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 30));
+        users_nameDisplay.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        users_nameDisplay.setForeground(new java.awt.Color(255, 255, 255));
+        users_nameDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        users_nameDisplay.setText("[NAME]");
+        users_imageContainer.add(users_nameDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 30));
 
-        members_container.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 360));
+        users_container.add(users_imageContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 360));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Welcome User!");
-        members_container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 130, -1));
+        users_container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 130, -1));
 
-        dashboard_members.add(members_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 340, 380));
+        dashboard_members.add(users_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 340, 380));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,57 +197,57 @@ public class DashboardUser extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void adminhome_membersButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_membersButtonMouseExited
-        adminhome_membersButton.setBackground(new Color(132, 72, 79));
-    }//GEN-LAST:event_adminhome_membersButtonMouseExited
+    private void users_membersButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_membersButtonMouseExited
+        users_membersButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_users_membersButtonMouseExited
 
-    private void adminhome_membersButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_membersButtonMouseEntered
-        adminhome_membersButton.setBackground(new Color(192, 132, 139));
-    }//GEN-LAST:event_adminhome_membersButtonMouseEntered
+    private void users_membersButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_membersButtonMouseEntered
+        users_membersButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_users_membersButtonMouseEntered
 
-    private void adminhome_membersButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_membersButtonMouseClicked
-        DashboardMembers membersPage = new DashboardMembers();
-        membersPage.setVisible(true);
+    private void users_membersButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_membersButtonMouseClicked
+        DashboardDetails accountPage = new DashboardDetails();
+        accountPage.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_adminhome_membersButtonMouseClicked
+    }//GEN-LAST:event_users_membersButtonMouseClicked
 
-    private void adminhome_productsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_productsButtonMouseClicked
+    private void users_productsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_productsButtonMouseClicked
         
-    }//GEN-LAST:event_adminhome_productsButtonMouseClicked
+    }//GEN-LAST:event_users_productsButtonMouseClicked
 
-    private void adminhome_productsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_productsButtonMouseEntered
-        adminhome_productsButton.setBackground(new Color(192, 132, 139));
-    }//GEN-LAST:event_adminhome_productsButtonMouseEntered
+    private void users_productsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_productsButtonMouseEntered
+        users_productsButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_users_productsButtonMouseEntered
 
-    private void adminhome_productsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_productsButtonMouseExited
-        adminhome_productsButton.setBackground(new Color(132, 72, 79));
-    }//GEN-LAST:event_adminhome_productsButtonMouseExited
+    private void users_productsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_productsButtonMouseExited
+        users_productsButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_users_productsButtonMouseExited
 
-    private void adminhome_unnamedButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_unnamedButton3MouseClicked
+    private void users_unnamedButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_unnamedButton3MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_adminhome_unnamedButton3MouseClicked
+    }//GEN-LAST:event_users_unnamedButton3MouseClicked
 
-    private void adminhome_unnamedButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_unnamedButton3MouseEntered
-        adminhome_unnamedButton3.setBackground(new Color(192, 132, 139));
-    }//GEN-LAST:event_adminhome_unnamedButton3MouseEntered
+    private void users_unnamedButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_unnamedButton3MouseEntered
+        users_unnamedButton3.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_users_unnamedButton3MouseEntered
 
-    private void adminhome_unnamedButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_unnamedButton3MouseExited
-        adminhome_unnamedButton3.setBackground(new Color(132, 72, 79));
-    }//GEN-LAST:event_adminhome_unnamedButton3MouseExited
+    private void users_unnamedButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_unnamedButton3MouseExited
+        users_unnamedButton3.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_users_unnamedButton3MouseExited
 
-    private void adminhome_logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_logoutButtonMouseClicked
+    private void users_logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_logoutButtonMouseClicked
         LoginForm loginPage = new LoginForm();
         loginPage.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_adminhome_logoutButtonMouseClicked
+    }//GEN-LAST:event_users_logoutButtonMouseClicked
 
-    private void adminhome_logoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_logoutButtonMouseEntered
-        adminhome_logoutButton.setBackground(new Color(192, 132, 139));
-    }//GEN-LAST:event_adminhome_logoutButtonMouseEntered
+    private void users_logoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_logoutButtonMouseEntered
+        users_logoutButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_users_logoutButtonMouseEntered
 
-    private void adminhome_logoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_logoutButtonMouseExited
-        adminhome_logoutButton.setBackground(new Color(132, 72, 79));
-    }//GEN-LAST:event_adminhome_logoutButtonMouseExited
+    private void users_logoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_logoutButtonMouseExited
+        users_logoutButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_users_logoutButtonMouseExited
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         Session sess = Session.getInstance();
@@ -259,7 +259,7 @@ public class DashboardUser extends javax.swing.JFrame {
             this.dispose();
         }
         else{
-            adminhome_nameDisplay.setText(""+sess.getName());
+            users_nameDisplay.setText(""+sess.getName());
         }
     }//GEN-LAST:event_formWindowActivated
 
@@ -331,20 +331,20 @@ public class DashboardUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.Box.Filler adminhome_filler;
-    private javax.swing.JPanel adminhome_logoutButton;
-    private javax.swing.JLabel adminhome_logoutLabel;
-    private javax.swing.JPanel adminhome_membersButton;
-    private javax.swing.JLabel adminhome_membersLabel;
-    private javax.swing.JLabel adminhome_nameDisplay;
-    private javax.swing.JPanel adminhome_productsButton;
-    private javax.swing.JLabel adminhome_productsLabel;
-    private javax.swing.JPanel adminhome_unnamedButton3;
-    private javax.swing.JLabel adminhome_unnamedLabel3;
     private javax.swing.JPanel dashboard_members;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel members_container;
-    private javax.swing.JPanel members_header;
+    private javax.swing.JLabel users_accountLabel;
+    private javax.swing.JPanel users_container;
+    private javax.swing.JPanel users_header;
+    private javax.swing.JPanel users_imageContainer;
+    private javax.swing.JPanel users_logoutButton;
+    private javax.swing.JLabel users_logoutLabel;
+    private javax.swing.JPanel users_membersButton;
+    private javax.swing.JLabel users_nameDisplay;
+    private javax.swing.JPanel users_productsButton;
+    private javax.swing.JLabel users_productsLabel;
+    private javax.swing.JPanel users_unnamedButton3;
+    private javax.swing.JLabel users_unnamedLabel3;
     // End of variables declaration//GEN-END:variables
 }
