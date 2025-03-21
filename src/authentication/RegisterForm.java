@@ -1,7 +1,9 @@
 package authentication;
 
 import config.dbConnector;
+import config.passwordHasher;
 import java.awt.Color;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -237,11 +239,18 @@ public class RegisterForm extends javax.swing.JFrame {
         }
         else{
             dbConnector dbc = new dbConnector();
-            if(dbc.insertData("INSERT INTO dashboard_members (member_name, member_password, member_position, member_email, member_contact, member_status) VALUES ('" + register_nameField.getText() + "', '" + register_passwordField.getText() + "', '" + register_typeBox.getSelectedItem() + "', '" + register_emailField.getText() + "', '" + register_contactField.getText() + "', 'Pending')")){
-                JOptionPane.showMessageDialog(null, "Inserted Successfully!");
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Connection Error!");
+            
+            try{
+                String pass = passwordHasher.hashPassword(register_passwordField.getText());
+                
+                if(dbc.insertData("INSERT INTO dashboard_members (member_name, member_password, member_position, member_email, member_contact, member_status) VALUES ('" + register_nameField.getText() + "', '" + pass + "', '" + register_typeBox.getSelectedItem() + "', '" + register_emailField.getText() + "', '" + register_contactField.getText() + "', 'Pending')")){
+                    JOptionPane.showMessageDialog(null, "Inserted Successfully!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Connection Error!");
+                }
+            }catch(NoSuchAlgorithmException ex){
+                System.out.println(""+ex);
             }
         }
     }//GEN-LAST:event_register_registerButtonMouseClicked

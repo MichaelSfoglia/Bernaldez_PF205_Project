@@ -3,7 +3,9 @@ package authentication;
 import adminpage.DashboardAdmin;
 import config.Session;
 import config.dbConnector;
+import config.passwordHasher;
 import java.awt.Color;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import userpage.DashboardUser;
@@ -21,32 +23,47 @@ public class LoginForm extends javax.swing.JFrame {
     
     public static int loginAcc(String username, String password){
         dbConnector connector = new dbConnector();
+        
         try{
             String query = "SELECT * FROM dashboard_members WHERE member_name = '"+username+"' AND member_password =  '"+password+"'";
             ResultSet resultSet = connector.getData(query);
             if(resultSet.next()){
-                status = resultSet.getString("member_status");
-                type = resultSet.getString("member_position");
                 
-                Session sess = Session.getInstance();
-                sess.setId(resultSet.getInt("member_id"));
-                sess.setName(resultSet.getString("member_name"));
-                sess.setEmail(resultSet.getString("member_email"));
-                sess.setType(resultSet.getString("member_position"));
-                sess.setStatus(resultSet.getString("member_status"));
-                
-                System.out.println(""+sess.getId());
-                return 1;
+                try{
+                    String hashedPass = resultSet.getString("member_password");
+                    String rehashedPass = passwordHasher.hashPassword(password);
+                    
+                    System.out.println(""+hashedPass);
+                    System.out.println(""+rehashedPass);
+                    
+                    if(hashedPass.equals(rehashedPass)){
+                        status = resultSet.getString("member_status");
+                        type = resultSet.getString("member_position");
+
+                        Session sess = Session.getInstance();
+                        sess.setId(resultSet.getInt("member_id"));
+                        sess.setName(resultSet.getString("member_name"));
+                        sess.setEmail(resultSet.getString("member_email"));
+                        sess.setType(resultSet.getString("member_position"));
+                        sess.setStatus(resultSet.getString("member_status"));
+
+                        System.out.println(""+sess.getId());
+                        return 1;
+                    }
+                    else{
+                        return 0;
+                    }
+                }
+                catch(NoSuchAlgorithmException ex){
+                    System.out.println(""+ex);
+                    return 0;
+                }
             }
             else{
-                
-                System.out.println("tests");
                 return 0;
-                
             }
         }
-        catch(SQLException ex){
-            System.out.println(""+ex);
+        catch(SQLException | NoSuchAlgorithmException ex){
             return 0;
         }
     }

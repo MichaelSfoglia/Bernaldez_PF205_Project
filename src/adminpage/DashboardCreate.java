@@ -20,7 +20,37 @@ public class DashboardCreate extends javax.swing.JFrame {
         dbConnector dbc = new dbConnector();
         try{
             String query = "SELECT * FROM dashboard_database WHERE member_name " +create_nameField.getText() 
-                    + " AND member_password " +create_emailField.getText() + "";
+                    + " AND member_email " +create_emailField.getText() + "";
+            ResultSet resultSet = dbc.getData(query);
+            
+            if(resultSet.next()){
+                email = resultSet.getString("member_email");
+                if(email.equals(create_emailField.getText())){
+                    JOptionPane.showMessageDialog(null, "Email is already used!");
+                    create_emailField.setText("");
+                }
+                username = resultSet.getString("member_name");
+                if(email.equals(create_emailField.getText())){
+                    JOptionPane.showMessageDialog(null, "Username is already used!");
+                    create_nameField.setText(""); 
+                }
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        catch(SQLException ex){
+            System.out.println("" +ex);
+            return false;
+        }
+    }
+    
+    public boolean updateCheck(){
+        dbConnector dbc = new dbConnector();
+        try{
+            String query = "SELECT * FROM dashboard_database WHERE (member_name " +create_nameField.getText() 
+                    + " OR member_email " +create_emailField.getText() + ") AND member_id != " + create_idField.getText();
             ResultSet resultSet = dbc.getData(query);
             
             if(resultSet.next()){
@@ -84,6 +114,8 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_clearLabel = new javax.swing.JLabel();
         create_refreshButton = new javax.swing.JPanel();
         create_refreshLabel = new javax.swing.JLabel();
+        create_idField = new javax.swing.JTextField();
+        create_idLabel = new javax.swing.JLabel();
         create_headerContainer = new javax.swing.JPanel();
         create_title = new javax.swing.JLabel();
 
@@ -94,7 +126,7 @@ public class DashboardCreate extends javax.swing.JFrame {
 
         create_imageContainer.setBackground(new java.awt.Color(132, 71, 71));
         create_imageContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        registerContainer.add(create_imageContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 190, 450));
+        registerContainer.add(create_imageContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 190, 500));
 
         create_formContainer.setBackground(new java.awt.Color(183, 71, 52));
         create_formContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,48 +135,48 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_nameLabel.setForeground(new java.awt.Color(255, 255, 255));
         create_nameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         create_nameLabel.setText("Name:");
-        create_formContainer.add(create_nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 20));
+        create_formContainer.add(create_nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
 
         create_nameField.setBackground(new java.awt.Color(192, 132, 139));
         create_nameField.setForeground(new java.awt.Color(255, 255, 255));
-        create_formContainer.add(create_nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 170, 30));
+        create_formContainer.add(create_nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 170, 30));
 
         create_passwordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create_passwordLabel.setForeground(new java.awt.Color(255, 255, 255));
         create_passwordLabel.setText("Password:");
-        create_formContainer.add(create_passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
+        create_formContainer.add(create_passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
 
         create_passwordField.setBackground(new java.awt.Color(192, 132, 139));
         create_passwordField.setForeground(new java.awt.Color(255, 255, 255));
-        create_formContainer.add(create_passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 170, 30));
+        create_formContainer.add(create_passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 170, 30));
 
         create_typeLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create_typeLabel.setForeground(new java.awt.Color(255, 255, 255));
         create_typeLabel.setText("User Type:");
-        create_formContainer.add(create_typeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 20));
+        create_formContainer.add(create_typeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, 20));
 
         create_typeBox.setBackground(new java.awt.Color(192, 132, 139));
         create_typeBox.setForeground(new java.awt.Color(255, 255, 255));
         create_typeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin" }));
-        create_formContainer.add(create_typeBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 170, 30));
+        create_formContainer.add(create_typeBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 170, 30));
 
         create_emailLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create_emailLabel.setForeground(new java.awt.Color(255, 255, 255));
         create_emailLabel.setText("Email:");
-        create_formContainer.add(create_emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, 20));
+        create_formContainer.add(create_emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 20));
 
         create_emailField.setBackground(new java.awt.Color(192, 132, 139));
         create_emailField.setForeground(new java.awt.Color(255, 255, 255));
-        create_formContainer.add(create_emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 170, 30));
+        create_formContainer.add(create_emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 170, 30));
 
         create_contactLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create_contactLabel.setForeground(new java.awt.Color(255, 255, 255));
         create_contactLabel.setText("Contact Number:");
-        create_formContainer.add(create_contactLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 20));
+        create_formContainer.add(create_contactLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 20));
 
         create_contactField.setBackground(new java.awt.Color(192, 132, 139));
         create_contactField.setForeground(new java.awt.Color(255, 255, 255));
-        create_formContainer.add(create_contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 170, 30));
+        create_formContainer.add(create_contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 170, 30));
 
         create_cancelButton.setBackground(new java.awt.Color(132, 72, 79));
         create_cancelButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -167,7 +199,7 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_cancelLabel.setText("Cancel");
         create_cancelButton.add(create_cancelLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 80, 20));
+        create_formContainer.add(create_cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 80, 20));
 
         create_addButton.setBackground(new java.awt.Color(132, 72, 79));
         create_addButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -190,26 +222,26 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_addLabel.setText("Add");
         create_addButton.add(create_addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 80, 20));
+        create_formContainer.add(create_addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 80, 20));
 
         create_confirmLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create_confirmLabel.setForeground(new java.awt.Color(255, 255, 255));
         create_confirmLabel.setText("Confirm Password:");
-        create_formContainer.add(create_confirmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
+        create_formContainer.add(create_confirmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 20));
 
         create_confirmField.setBackground(new java.awt.Color(192, 132, 139));
         create_confirmField.setForeground(new java.awt.Color(255, 255, 255));
-        create_formContainer.add(create_confirmField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 170, 30));
+        create_formContainer.add(create_confirmField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 170, 30));
 
         create_statusBox.setBackground(new java.awt.Color(192, 132, 139));
         create_statusBox.setForeground(new java.awt.Color(255, 255, 255));
         create_statusBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Pending" }));
-        create_formContainer.add(create_statusBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 170, 30));
+        create_formContainer.add(create_statusBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 170, 30));
 
         create_statusLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create_statusLabel.setForeground(new java.awt.Color(255, 255, 255));
         create_statusLabel.setText("Status");
-        create_formContainer.add(create_statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 20));
+        create_formContainer.add(create_statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, 20));
 
         create_updateButton.setBackground(new java.awt.Color(132, 72, 79));
         create_updateButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -232,7 +264,7 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_cancelLabel1.setText("Update");
         create_updateButton.add(create_cancelLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 80, 20));
+        create_formContainer.add(create_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 80, 20));
 
         create_addButton1.setBackground(new java.awt.Color(132, 72, 79));
         create_addButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -255,7 +287,7 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_addLabel1.setText("Delete");
         create_addButton1.add(create_addLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_addButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, 80, 20));
+        create_formContainer.add(create_addButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 80, 20));
 
         create_clearButton.setBackground(new java.awt.Color(132, 72, 79));
         create_clearButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -278,7 +310,7 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_clearLabel.setText("Clear");
         create_clearButton.add(create_clearLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 80, 20));
+        create_formContainer.add(create_clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 80, 20));
 
         create_refreshButton.setBackground(new java.awt.Color(132, 72, 79));
         create_refreshButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -301,9 +333,20 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_refreshLabel.setText("Refresh");
         create_refreshButton.add(create_refreshLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 80, 20));
+        create_formContainer.add(create_refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 80, 20));
 
-        registerContainer.add(create_formContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 190, 450));
+        create_idField.setEditable(false);
+        create_idField.setBackground(new java.awt.Color(192, 132, 139));
+        create_idField.setForeground(new java.awt.Color(255, 255, 255));
+        create_formContainer.add(create_idField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 170, 30));
+
+        create_idLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        create_idLabel.setForeground(new java.awt.Color(255, 255, 255));
+        create_idLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        create_idLabel.setText("ID: ");
+        create_formContainer.add(create_idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 20));
+
+        registerContainer.add(create_formContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 190, 500));
 
         create_headerContainer.setBackground(new java.awt.Color(121, 51, 65));
         create_headerContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -389,7 +432,27 @@ public class DashboardCreate extends javax.swing.JFrame {
     }//GEN-LAST:event_create_addButton1MouseExited
 
     private void create_updateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_updateButtonMouseClicked
-        // TODO add your handling code here:
+        if(create_nameField.getText().isEmpty() && create_passwordField.getPassword().length == 0 
+                && create_emailField.getText().isEmpty() && create_contactField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields are required!");
+        }
+        else if(create_passwordField.getPassword().length < 8){
+            JOptionPane.showMessageDialog(null, "Password character should be 8 and above.");
+        }
+        else if(updateCheck()){
+            System.out.println("Duplicate exists");
+        }
+        else{
+            dbConnector dbc = new dbConnector();
+            dbc.updateData("UPDATE dashboard_members SET member_name = " +create_nameField.getText()+", member_password = " 
+                +create_passwordField.getText()+ ", member_position = " +create_typeBox.getSelectedItem()+", member_email = " 
+                +create_emailField.getText()+ ", member_contact = " +create_contactField.getText()+ ", member_status" 
+                +create_statusBox.getSelectedItem()+ " WHERE member_id" +create_idField.getText());
+        
+            JOptionPane.showMessageDialog(null, "Registered Successfully!");
+                members.setVisible(true);
+                this.dispose();
+        }
     }//GEN-LAST:event_create_updateButtonMouseClicked
 
     private void create_updateButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_updateButtonMouseEntered
@@ -480,6 +543,8 @@ public class DashboardCreate extends javax.swing.JFrame {
     private javax.swing.JLabel create_emailLabel;
     private javax.swing.JPanel create_formContainer;
     private javax.swing.JPanel create_headerContainer;
+    public javax.swing.JTextField create_idField;
+    private javax.swing.JLabel create_idLabel;
     private javax.swing.JPanel create_imageContainer;
     public javax.swing.JTextField create_nameField;
     private javax.swing.JLabel create_nameLabel;
