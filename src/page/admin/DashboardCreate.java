@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
+import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -178,8 +179,8 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_statusLabel = new javax.swing.JLabel();
         create_updateButton = new javax.swing.JPanel();
         create_cancelLabel1 = new javax.swing.JLabel();
-        create_addButton1 = new javax.swing.JPanel();
-        create_addLabel1 = new javax.swing.JLabel();
+        create_deleteButton = new javax.swing.JPanel();
+        create_deleteLabel = new javax.swing.JLabel();
         create_clearButton = new javax.swing.JPanel();
         create_clearLabel = new javax.swing.JLabel();
         create_refreshButton = new javax.swing.JPanel();
@@ -389,28 +390,28 @@ public class DashboardCreate extends javax.swing.JFrame {
 
         create_formContainer.add(create_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 80, 20));
 
-        create_addButton1.setBackground(new java.awt.Color(132, 72, 79));
-        create_addButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        create_addButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        create_deleteButton.setBackground(new java.awt.Color(132, 72, 79));
+        create_deleteButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        create_deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                create_addButton1MouseClicked(evt);
+                create_deleteButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                create_addButton1MouseEntered(evt);
+                create_deleteButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                create_addButton1MouseExited(evt);
+                create_deleteButtonMouseExited(evt);
             }
         });
-        create_addButton1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        create_deleteButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        create_addLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        create_addLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        create_addLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        create_addLabel1.setText("Delete");
-        create_addButton1.add(create_addLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
+        create_deleteLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        create_deleteLabel.setForeground(new java.awt.Color(255, 255, 255));
+        create_deleteLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        create_deleteLabel.setText("Delete");
+        create_deleteButton.add(create_deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 20));
 
-        create_formContainer.add(create_addButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 80, 20));
+        create_formContainer.add(create_deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 80, 20));
 
         create_clearButton.setBackground(new java.awt.Color(132, 72, 79));
         create_clearButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -502,6 +503,8 @@ public class DashboardCreate extends javax.swing.JFrame {
     }//GEN-LAST:event_create_cancelButtonMouseClicked
 
     private void create_addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_addButtonMouseClicked
+        boolean isInteger = Pattern.matches("^\\d*$", create_contactField.getText());
+        
         if(create_nameField.getText().isEmpty() && create_passwordField.getPassword().length == 0 
                 && create_emailField.getText().isEmpty() && create_contactField.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "All fields are required!");
@@ -511,6 +514,12 @@ public class DashboardCreate extends javax.swing.JFrame {
         }
         else if(duplicateCheck()){
             System.out.println("Duplicate exists");
+        }
+        else if(isInteger == false){
+            JOptionPane.showMessageDialog(null, "Contact number must be numberical");
+        }
+        else if(create_passwordField.getPassword().equals(create_confirmField.getPassword())){
+            JOptionPane.showMessageDialog(null, "New password must match to confirm password");
         }
         else{
             dbConnector dbc = new dbConnector();
@@ -542,17 +551,17 @@ public class DashboardCreate extends javax.swing.JFrame {
         create_addButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_create_addButtonMouseExited
 
-    private void create_addButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_addButton1MouseClicked
+    private void create_deleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_deleteButtonMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_create_addButton1MouseClicked
+    }//GEN-LAST:event_create_deleteButtonMouseClicked
 
-    private void create_addButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_addButton1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_create_addButton1MouseEntered
+    private void create_deleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_deleteButtonMouseEntered
+        create_deleteButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_create_deleteButtonMouseEntered
 
-    private void create_addButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_addButton1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_create_addButton1MouseExited
+    private void create_deleteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_deleteButtonMouseExited
+        create_deleteButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_create_deleteButtonMouseExited
 
     private void create_updateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_updateButtonMouseClicked
         if(create_nameField.getText().isEmpty() && create_passwordField.getPassword().length == 0 
@@ -579,11 +588,11 @@ public class DashboardCreate extends javax.swing.JFrame {
     }//GEN-LAST:event_create_updateButtonMouseClicked
 
     private void create_updateButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_updateButtonMouseEntered
-        // TODO add your handling code here:
+        create_updateButton.setBackground(new Color(192, 132, 139));
     }//GEN-LAST:event_create_updateButtonMouseEntered
 
     private void create_updateButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_updateButtonMouseExited
-        // TODO add your handling code here:
+        create_updateButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_create_updateButtonMouseExited
 
     private void create_clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_clearButtonMouseClicked
@@ -591,11 +600,11 @@ public class DashboardCreate extends javax.swing.JFrame {
     }//GEN-LAST:event_create_clearButtonMouseClicked
 
     private void create_clearButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_clearButtonMouseEntered
-        // TODO add your handling code here:
+        create_clearButton.setBackground(new Color(192, 132, 139));
     }//GEN-LAST:event_create_clearButtonMouseEntered
 
     private void create_clearButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_clearButtonMouseExited
-        // TODO add your handling code here:
+        create_clearButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_create_clearButtonMouseExited
 
     private void create_refreshButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_refreshButtonMouseClicked
@@ -603,11 +612,11 @@ public class DashboardCreate extends javax.swing.JFrame {
     }//GEN-LAST:event_create_refreshButtonMouseClicked
 
     private void create_refreshButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_refreshButtonMouseEntered
-        // TODO add your handling code here:
+        create_refreshButton.setBackground(new Color(192, 132, 139));
     }//GEN-LAST:event_create_refreshButtonMouseEntered
 
     private void create_refreshButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_refreshButtonMouseExited
-        // TODO add your handling code here:
+        create_refreshButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_create_refreshButtonMouseExited
 
     private void create_selectimageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_selectimageButtonMouseClicked
@@ -635,11 +644,11 @@ public class DashboardCreate extends javax.swing.JFrame {
     }//GEN-LAST:event_create_selectimageButtonMouseClicked
 
     private void create_selectimageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_selectimageButtonMouseEntered
-        // TODO add your handling code here:
+        create_selectimageButton.setBackground(new Color(192, 132, 139));
     }//GEN-LAST:event_create_selectimageButtonMouseEntered
 
     private void create_selectimageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_selectimageButtonMouseExited
-        // TODO add your handling code here:
+        create_selectimageButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_create_selectimageButtonMouseExited
 
     private void create_removeimageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_removeimageButtonMouseClicked
@@ -651,11 +660,11 @@ public class DashboardCreate extends javax.swing.JFrame {
     }//GEN-LAST:event_create_removeimageButtonMouseClicked
 
     private void create_removeimageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_removeimageButtonMouseEntered
-        // TODO add your handling code here:
+        create_removeimageButton.setBackground(new Color(192, 132, 139));
     }//GEN-LAST:event_create_removeimageButtonMouseEntered
 
     private void create_removeimageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_removeimageButtonMouseExited
-        // TODO add your handling code here:
+        create_removeimageButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_create_removeimageButtonMouseExited
 
     /**
@@ -698,9 +707,7 @@ public class DashboardCreate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel create_addButton;
-    private javax.swing.JPanel create_addButton1;
     private javax.swing.JLabel create_addLabel;
-    private javax.swing.JLabel create_addLabel1;
     private javax.swing.JPanel create_cancelButton;
     private javax.swing.JLabel create_cancelLabel;
     private javax.swing.JLabel create_cancelLabel1;
@@ -711,6 +718,8 @@ public class DashboardCreate extends javax.swing.JFrame {
     public javax.swing.JTextField create_contactField;
     private javax.swing.JLabel create_contactLabel;
     private javax.swing.JLabel create_create_removeLabel;
+    private javax.swing.JPanel create_deleteButton;
+    private javax.swing.JLabel create_deleteLabel;
     public javax.swing.JTextField create_emailField;
     private javax.swing.JLabel create_emailLabel;
     private javax.swing.JPanel create_formContainer;

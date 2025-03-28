@@ -5,6 +5,7 @@ import config.passwordHasher;
 import java.awt.Color;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class RegisterForm extends javax.swing.JFrame {
@@ -17,7 +18,7 @@ public class RegisterForm extends javax.swing.JFrame {
     }
     
     public static String email, username;
-
+    
     public boolean duplicateCheck(){
         dbConnector dbc = new dbConnector();
         try{
@@ -227,7 +228,7 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_register_cancelButtonMouseClicked
 
     private void register_registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_register_registerButtonMouseClicked
-      
+        boolean isInteger = Pattern.matches("^\\d*$", register_contactField.getText());
         
         if(register_nameField.getText().isEmpty() && register_passwordField.getPassword().length == 0 
                 && register_emailField.getText().isEmpty() && register_contactField.getText().isEmpty()){
@@ -237,12 +238,16 @@ public class RegisterForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Password character should be 8 and above.");
         }
         else if(duplicateCheck()){
-            System.out.println("Duplicate exists");
+            JOptionPane.showMessageDialog(null, "Duplicate exists");
+        }
+        else if(isInteger == false){
+            JOptionPane.showMessageDialog(null, "Contact number must be numberical");
+        }
+        else if(register_passwordField.getPassword().equals(register_confirmField.getPassword())){
+            JOptionPane.showMessageDialog(null, "New password must match to confirm password");
         }
         else{
-            
             dbConnector dbc = new dbConnector();
-            
             try{
                 String pass = passwordHasher.hashPassword(register_passwordField.getText());
                

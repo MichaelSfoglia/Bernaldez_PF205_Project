@@ -223,7 +223,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_adminhome_productsButtonMouseExited
 
     private void adminhome_unnamedButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_unnamedButton3MouseClicked
-        // TODO add your handling code here:
+        // NONE
     }//GEN-LAST:event_adminhome_unnamedButton3MouseClicked
 
     private void adminhome_unnamedButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_unnamedButton3MouseEntered

@@ -44,6 +44,8 @@ public class DashboardDetails extends javax.swing.JFrame {
         register_cancelLabel = new javax.swing.JLabel();
         details_passButton = new javax.swing.JPanel();
         register_passLabel = new javax.swing.JLabel();
+        details_backButton = new javax.swing.JPanel();
+        register_backLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -105,6 +107,7 @@ public class DashboardDetails extends javax.swing.JFrame {
         details_passwordLabel.setText("Password:");
         details_container.add(details_passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, 20));
 
+        details_passwordField.setEditable(false);
         details_passwordField.setBackground(new java.awt.Color(192, 132, 139));
         details_passwordField.setForeground(new java.awt.Color(255, 255, 255));
         details_container.add(details_passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 170, 30));
@@ -124,6 +127,7 @@ public class DashboardDetails extends javax.swing.JFrame {
         details_emailLabel.setText("Email:");
         details_container.add(details_emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, 20));
 
+        details_emailField.setEditable(false);
         details_emailField.setBackground(new java.awt.Color(192, 132, 139));
         details_emailField.setForeground(new java.awt.Color(255, 255, 255));
         details_container.add(details_emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 170, 30));
@@ -133,6 +137,7 @@ public class DashboardDetails extends javax.swing.JFrame {
         details_contactLabel.setText("Contact Number:");
         details_container.add(details_contactLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, 20));
 
+        details_contactField.setEditable(false);
         details_contactField.setBackground(new java.awt.Color(192, 132, 139));
         details_contactField.setForeground(new java.awt.Color(255, 255, 255));
         details_container.add(details_contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 170, 30));
@@ -181,7 +186,30 @@ public class DashboardDetails extends javax.swing.JFrame {
         register_passLabel.setText("Change Pass");
         details_passButton.add(register_passLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 110, 20));
 
-        details_container.add(details_passButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 170, 20));
+        details_container.add(details_passButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 170, 20));
+
+        details_backButton.setBackground(new java.awt.Color(132, 72, 79));
+        details_backButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        details_backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                details_backButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                details_backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                details_backButtonMouseExited(evt);
+            }
+        });
+        details_backButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        register_backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        register_backLabel.setForeground(new java.awt.Color(255, 255, 255));
+        register_backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        register_backLabel.setText("Back");
+        details_backButton.add(register_backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 110, 20));
+
+        details_container.add(details_backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 170, 20));
 
         details_account.add(details_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 380, 380));
 
@@ -234,12 +262,26 @@ public class DashboardDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_details_passButtonMouseClicked
 
     private void details_passButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_details_passButtonMouseEntered
-        // TODO add your handling code here:
+        details_passButton.setBackground(new Color(192, 132, 139));
     }//GEN-LAST:event_details_passButtonMouseEntered
 
     private void details_passButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_details_passButtonMouseExited
-        // TODO add your handling code here:
+        details_passButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_details_passButtonMouseExited
+
+    private void details_backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_details_backButtonMouseClicked
+        DashboardUser userpage = new DashboardUser();
+        userpage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_details_backButtonMouseClicked
+
+    private void details_backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_details_backButtonMouseEntered
+        details_backButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_details_backButtonMouseEntered
+
+    private void details_backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_details_backButtonMouseExited
+        details_backButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_details_backButtonMouseExited
 
     /**
      * @param args the command line arguments
@@ -341,6 +383,7 @@ public class DashboardDetails extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel details_account;
+    private javax.swing.JPanel details_backButton;
     private javax.swing.JTextField details_contactField;
     private javax.swing.JLabel details_contactLabel;
     private javax.swing.JPanel details_container;
@@ -360,6 +403,7 @@ public class DashboardDetails extends javax.swing.JFrame {
     private javax.swing.JLabel details_typeLabel;
     private javax.swing.JPanel details_userContainer;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel register_backLabel;
     private javax.swing.JLabel register_cancelLabel;
     private javax.swing.JLabel register_passLabel;
     // End of variables declaration//GEN-END:variables
