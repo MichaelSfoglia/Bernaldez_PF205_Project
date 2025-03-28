@@ -32,8 +32,6 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_filler = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         adminhome_productsButton = new javax.swing.JPanel();
         adminhome_productsLabel = new javax.swing.JLabel();
-        adminhome_unnamedButton3 = new javax.swing.JPanel();
-        adminhome_unnamedLabel3 = new javax.swing.JLabel();
         adminhome_logoutButton = new javax.swing.JPanel();
         adminhome_logoutLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -84,7 +82,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_membersLabel.setText("Members");
         adminhome_membersButton.add(adminhome_membersLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_membersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 50));
+        members_container.add(adminhome_membersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 50));
         members_container.add(adminhome_filler, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, -30, 10, 410));
 
         adminhome_productsButton.setBackground(new java.awt.Color(132, 72, 79));
@@ -108,30 +106,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_productsLabel.setText("Products");
         adminhome_productsButton.add(adminhome_productsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 50));
-
-        adminhome_unnamedButton3.setBackground(new java.awt.Color(132, 72, 79));
-        adminhome_unnamedButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        adminhome_unnamedButton3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminhome_unnamedButton3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                adminhome_unnamedButton3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                adminhome_unnamedButton3MouseExited(evt);
-            }
-        });
-        adminhome_unnamedButton3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        adminhome_unnamedLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        adminhome_unnamedLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        adminhome_unnamedLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminhome_unnamedLabel3.setText("-");
-        adminhome_unnamedButton3.add(adminhome_unnamedLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
-
-        members_container.add(adminhome_unnamedButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 50));
+        members_container.add(adminhome_productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 50));
 
         adminhome_logoutButton.setBackground(new java.awt.Color(132, 72, 79));
         adminhome_logoutButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -222,18 +197,6 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_productsButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_adminhome_productsButtonMouseExited
 
-    private void adminhome_unnamedButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_unnamedButton3MouseClicked
-        // NONE
-    }//GEN-LAST:event_adminhome_unnamedButton3MouseClicked
-
-    private void adminhome_unnamedButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_unnamedButton3MouseEntered
-        adminhome_unnamedButton3.setBackground(new Color(192, 132, 139));
-    }//GEN-LAST:event_adminhome_unnamedButton3MouseEntered
-
-    private void adminhome_unnamedButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_unnamedButton3MouseExited
-        adminhome_unnamedButton3.setBackground(new Color(132, 72, 79));
-    }//GEN-LAST:event_adminhome_unnamedButton3MouseExited
-
     private void adminhome_logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminhome_logoutButtonMouseClicked
         LoginForm loginPage = new LoginForm();
         loginPage.setVisible(true);
@@ -321,8 +284,6 @@ public class DashboardAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel adminhome_nameDisplay;
     private javax.swing.JPanel adminhome_productsButton;
     private javax.swing.JLabel adminhome_productsLabel;
-    private javax.swing.JPanel adminhome_unnamedButton3;
-    private javax.swing.JLabel adminhome_unnamedLabel3;
     private javax.swing.JPanel dashboard_members;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

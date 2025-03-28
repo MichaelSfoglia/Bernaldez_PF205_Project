@@ -84,6 +84,7 @@ public class LoginForm extends javax.swing.JFrame {
         login_loginButton = new javax.swing.JPanel();
         login_registerLabel = new javax.swing.JLabel();
         login_createLabel = new javax.swing.JLabel();
+        login_resetLabel = new javax.swing.JLabel();
         register_headerContainer = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -181,6 +182,23 @@ public class LoginForm extends javax.swing.JFrame {
         });
         register_formContainer.add(login_createLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 170, 20));
 
+        login_resetLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        login_resetLabel.setForeground(new java.awt.Color(255, 255, 255));
+        login_resetLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        login_resetLabel.setText("Forgot Password?");
+        login_resetLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                login_resetLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                login_resetLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                login_resetLabelMouseExited(evt);
+            }
+        });
+        register_formContainer.add(login_resetLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 284, 170, 20));
+
         registerContainer.add(register_formContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 190, 340));
 
         register_headerContainer.setBackground(new java.awt.Color(121, 51, 65));
@@ -275,6 +293,18 @@ public class LoginForm extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_login_createLabelMouseClicked
 
+    private void login_resetLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_resetLabelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_login_resetLabelMouseClicked
+
+    private void login_resetLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_resetLabelMouseEntered
+        login_resetLabel.setForeground(new Color(192, 132, 139));
+    }//GEN-LAST:event_login_resetLabelMouseEntered
+
+    private void login_resetLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_resetLabelMouseExited
+        login_resetLabel.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_login_resetLabelMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -324,6 +354,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JPasswordField login_passwordField;
     private javax.swing.JLabel login_passwordLabel;
     private javax.swing.JLabel login_registerLabel;
+    private javax.swing.JLabel login_resetLabel;
     private javax.swing.JPanel registerContainer;
     private javax.swing.JPanel register_formContainer;
     private javax.swing.JPanel register_headerContainer;

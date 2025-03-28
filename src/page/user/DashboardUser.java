@@ -32,8 +32,6 @@ public class DashboardUser extends javax.swing.JFrame {
         adminhome_filler = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         users_productsButton = new javax.swing.JPanel();
         users_productsLabel = new javax.swing.JLabel();
-        users_unnamedButton3 = new javax.swing.JPanel();
-        users_unnamedLabel3 = new javax.swing.JLabel();
         users_logoutButton = new javax.swing.JPanel();
         users_logoutLabel = new javax.swing.JLabel();
         users_imageContainer = new javax.swing.JPanel();
@@ -84,7 +82,7 @@ public class DashboardUser extends javax.swing.JFrame {
         users_accountLabel.setText("Account");
         users_membersButton.add(users_accountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        users_container.add(users_membersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 50));
+        users_container.add(users_membersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 50));
         users_container.add(adminhome_filler, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, -30, 10, 410));
 
         users_productsButton.setBackground(new java.awt.Color(132, 72, 79));
@@ -108,30 +106,7 @@ public class DashboardUser extends javax.swing.JFrame {
         users_productsLabel.setText("Products");
         users_productsButton.add(users_productsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        users_container.add(users_productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 50));
-
-        users_unnamedButton3.setBackground(new java.awt.Color(132, 72, 79));
-        users_unnamedButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        users_unnamedButton3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                users_unnamedButton3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                users_unnamedButton3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                users_unnamedButton3MouseExited(evt);
-            }
-        });
-        users_unnamedButton3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        users_unnamedLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        users_unnamedLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        users_unnamedLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        users_unnamedLabel3.setText("-");
-        users_unnamedButton3.add(users_unnamedLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
-
-        users_container.add(users_unnamedButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 50));
+        users_container.add(users_productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 50));
 
         users_logoutButton.setBackground(new java.awt.Color(132, 72, 79));
         users_logoutButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -221,18 +196,6 @@ public class DashboardUser extends javax.swing.JFrame {
     private void users_productsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_productsButtonMouseExited
         users_productsButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_users_productsButtonMouseExited
-
-    private void users_unnamedButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_unnamedButton3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_users_unnamedButton3MouseClicked
-
-    private void users_unnamedButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_unnamedButton3MouseEntered
-        users_unnamedButton3.setBackground(new Color(192, 132, 139));
-    }//GEN-LAST:event_users_unnamedButton3MouseEntered
-
-    private void users_unnamedButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_unnamedButton3MouseExited
-        users_unnamedButton3.setBackground(new Color(132, 72, 79));
-    }//GEN-LAST:event_users_unnamedButton3MouseExited
 
     private void users_logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_users_logoutButtonMouseClicked
         LoginForm loginPage = new LoginForm();
@@ -343,7 +306,5 @@ public class DashboardUser extends javax.swing.JFrame {
     private javax.swing.JLabel users_nameDisplay;
     private javax.swing.JPanel users_productsButton;
     private javax.swing.JLabel users_productsLabel;
-    private javax.swing.JPanel users_unnamedButton3;
-    private javax.swing.JLabel users_unnamedLabel3;
     // End of variables declaration//GEN-END:variables
 }
