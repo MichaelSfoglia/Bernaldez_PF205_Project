@@ -294,7 +294,9 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_login_createLabelMouseClicked
 
     private void login_resetLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_resetLabelMouseClicked
-        // TODO add your handling code here:
+        RecoveryForm reset = new RecoveryForm();
+        reset.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_login_resetLabelMouseClicked
 
     private void login_resetLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_resetLabelMouseEntered

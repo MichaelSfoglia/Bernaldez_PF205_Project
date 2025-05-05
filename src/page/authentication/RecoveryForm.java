@@ -5,6 +5,8 @@
  */
 package page.authentication;
 
+import java.awt.Color;
+
 /**
  *
  * @author champ
@@ -27,108 +29,179 @@ public class RecoveryForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        register_headerContainer = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        register_imageContainer = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        register_formContainer = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        recovery_container = new javax.swing.JPanel();
+        recovery_headerContainer = new javax.swing.JPanel();
+        recovery_title = new javax.swing.JLabel();
+        recovery_formBody = new javax.swing.JPanel();
+        recovery_idLabel = new javax.swing.JLabel();
+        recovery_idField = new javax.swing.JTextField();
+        recovery_codeLabel = new javax.swing.JLabel();
+        recovery_codeField = new javax.swing.JTextField();
+        recovery_buttonFooter = new javax.swing.JPanel();
+        recovery_backButton = new javax.swing.JPanel();
+        recovery_backLabel = new javax.swing.JLabel();
+        recovery_resendButton = new javax.swing.JPanel();
+        recovery_resendLabel = new javax.swing.JLabel();
+        recovery_enterButton = new javax.swing.JPanel();
+        recovery_enterLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        recovery_container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        register_headerContainer.setBackground(new java.awt.Color(121, 51, 65));
-        register_headerContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        recovery_headerContainer.setBackground(new java.awt.Color(121, 51, 65));
+        recovery_headerContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Temporary Password Reset");
-        register_headerContainer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 230, 30));
+        recovery_title.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        recovery_title.setForeground(new java.awt.Color(255, 255, 255));
+        recovery_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recovery_title.setText("Temporary Password Reset");
+        recovery_headerContainer.add(recovery_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 230, 30));
 
-        jPanel1.add(register_headerContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 30));
+        recovery_container.add(recovery_headerContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 30));
 
-        register_imageContainer.setBackground(new java.awt.Color(132, 71, 71));
-        register_imageContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        recovery_formBody.setBackground(new java.awt.Color(132, 71, 71));
+        recovery_formBody.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ID: ");
-        register_imageContainer.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 20));
-        register_imageContainer.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 30));
+        recovery_idLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        recovery_idLabel.setForeground(new java.awt.Color(255, 255, 255));
+        recovery_idLabel.setText("ID: ");
+        recovery_formBody.add(recovery_idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 20));
+        recovery_formBody.add(recovery_idField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 30));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Code:");
-        register_imageContainer.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 40, 20));
-        register_imageContainer.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 230, 30));
+        recovery_codeLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        recovery_codeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        recovery_codeLabel.setText("Code:");
+        recovery_formBody.add(recovery_codeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 40, 20));
+        recovery_formBody.add(recovery_codeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 230, 30));
 
-        jPanel1.add(register_imageContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 250, 120));
+        recovery_container.add(recovery_formBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 250, 120));
 
-        register_formContainer.setBackground(new java.awt.Color(183, 71, 52));
-        register_formContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        recovery_buttonFooter.setBackground(new java.awt.Color(183, 71, 52));
+        recovery_buttonFooter.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(132, 72, 79));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        recovery_backButton.setBackground(new java.awt.Color(132, 72, 79));
+        recovery_backButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        recovery_backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                recovery_backButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                recovery_backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                recovery_backButtonMouseExited(evt);
+            }
+        });
+        recovery_backButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Back");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 30));
+        recovery_backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        recovery_backLabel.setForeground(new java.awt.Color(255, 255, 255));
+        recovery_backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recovery_backLabel.setText("Back");
+        recovery_backButton.add(recovery_backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 30));
 
-        register_formContainer.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 30));
+        recovery_buttonFooter.add(recovery_backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 30));
 
-        jPanel3.setBackground(new java.awt.Color(132, 72, 79));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        recovery_resendButton.setBackground(new java.awt.Color(132, 72, 79));
+        recovery_resendButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        recovery_resendButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                recovery_resendButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                recovery_resendButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                recovery_resendButtonMouseExited(evt);
+            }
+        });
+        recovery_resendButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Resend Code");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 30));
+        recovery_resendLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        recovery_resendLabel.setForeground(new java.awt.Color(255, 255, 255));
+        recovery_resendLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recovery_resendLabel.setText("Resend Code");
+        recovery_resendButton.add(recovery_resendLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 30));
 
-        register_formContainer.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 110, 30));
+        recovery_buttonFooter.add(recovery_resendButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 110, 30));
 
-        jPanel4.setBackground(new java.awt.Color(132, 72, 79));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        recovery_enterButton.setBackground(new java.awt.Color(132, 72, 79));
+        recovery_enterButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        recovery_enterButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                recovery_enterButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                recovery_enterButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                recovery_enterButtonMouseExited(evt);
+            }
+        });
+        recovery_enterButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Enter Code");
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 30));
+        recovery_enterLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        recovery_enterLabel.setForeground(new java.awt.Color(255, 255, 255));
+        recovery_enterLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recovery_enterLabel.setText("Enter Code");
+        recovery_enterButton.add(recovery_enterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 30));
 
-        register_formContainer.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 110, 30));
+        recovery_buttonFooter.add(recovery_enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 110, 30));
 
-        jPanel1.add(register_formContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 250, 110));
+        recovery_container.add(recovery_buttonFooter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 250, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(recovery_container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(recovery_container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void recovery_backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_backButtonMouseEntered
+        recovery_backButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_recovery_backButtonMouseEntered
+
+    private void recovery_backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_backButtonMouseExited
+        recovery_backButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_recovery_backButtonMouseExited
+
+    private void recovery_enterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_enterButtonMouseEntered
+        recovery_enterButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_recovery_enterButtonMouseEntered
+
+    private void recovery_enterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_enterButtonMouseExited
+        recovery_enterButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_recovery_enterButtonMouseExited
+
+    private void recovery_resendButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_resendButtonMouseEntered
+        recovery_resendButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_recovery_resendButtonMouseEntered
+
+    private void recovery_resendButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_resendButtonMouseExited
+        recovery_resendButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_recovery_resendButtonMouseExited
+
+    private void recovery_backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_backButtonMouseClicked
+        LoginForm login = new LoginForm();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_recovery_backButtonMouseClicked
+
+    private void recovery_enterButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_enterButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recovery_enterButtonMouseClicked
+
+    private void recovery_resendButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recovery_resendButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recovery_resendButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -166,20 +239,20 @@ public class RecoveryForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JPanel register_formContainer;
-    private javax.swing.JPanel register_headerContainer;
-    private javax.swing.JPanel register_imageContainer;
+    private javax.swing.JPanel recovery_backButton;
+    private javax.swing.JLabel recovery_backLabel;
+    private javax.swing.JPanel recovery_buttonFooter;
+    private javax.swing.JTextField recovery_codeField;
+    private javax.swing.JLabel recovery_codeLabel;
+    private javax.swing.JPanel recovery_container;
+    private javax.swing.JPanel recovery_enterButton;
+    private javax.swing.JLabel recovery_enterLabel;
+    private javax.swing.JPanel recovery_formBody;
+    private javax.swing.JPanel recovery_headerContainer;
+    private javax.swing.JTextField recovery_idField;
+    private javax.swing.JLabel recovery_idLabel;
+    private javax.swing.JPanel recovery_resendButton;
+    private javax.swing.JLabel recovery_resendLabel;
+    private javax.swing.JLabel recovery_title;
     // End of variables declaration//GEN-END:variables
 }
