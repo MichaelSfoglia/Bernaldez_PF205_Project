@@ -53,6 +53,8 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_updateLabel = new javax.swing.JLabel();
         members_deleteButton = new javax.swing.JPanel();
         members_deleteLabel = new javax.swing.JLabel();
+        members_printButton = new javax.swing.JPanel();
+        members_printLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -148,7 +150,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_createLabel.setText("Create");
         members_createButton.add(members_createLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(members_createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 130, 50));
+        members_container.add(members_createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 130, 50));
 
         members_updateButton.setBackground(new java.awt.Color(132, 72, 79));
         members_updateButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -171,7 +173,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_updateLabel.setText("Update");
         members_updateButton.add(members_updateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(members_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 130, 50));
+        members_container.add(members_updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 130, 50));
 
         members_deleteButton.setBackground(new java.awt.Color(132, 72, 79));
         members_deleteButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -194,7 +196,30 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_deleteLabel.setText("Delete");
         members_deleteButton.add(members_deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(members_deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 130, 50));
+        members_container.add(members_deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 130, 50));
+
+        members_printButton.setBackground(new java.awt.Color(132, 72, 79));
+        members_printButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        members_printButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                members_printButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                members_printButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                members_printButtonMouseExited(evt);
+            }
+        });
+        members_printButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        members_printLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        members_printLabel.setForeground(new java.awt.Color(255, 255, 255));
+        members_printLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        members_printLabel.setText("Print");
+        members_printButton.add(members_printLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
+
+        members_container.add(members_printButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 130, 50));
 
         dashboard_members.add(members_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 710, 380));
 
@@ -301,6 +326,18 @@ public class DashboardMembers extends javax.swing.JFrame {
         members_deleteButton.setBackground(new Color(132, 72, 79));
     }//GEN-LAST:event_members_deleteButtonMouseExited
 
+    private void members_printButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_printButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_members_printButtonMouseClicked
+
+    private void members_printButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_printButtonMouseEntered
+        members_deleteButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_members_printButtonMouseEntered
+
+    private void members_printButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_printButtonMouseExited
+        members_deleteButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_members_printButtonMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -355,6 +392,8 @@ public class DashboardMembers extends javax.swing.JFrame {
     private javax.swing.JLabel members_deleteLabel;
     private javax.swing.JPanel members_header;
     private javax.swing.JTable members_membersTable;
+    private javax.swing.JPanel members_printButton;
+    private javax.swing.JLabel members_printLabel;
     private javax.swing.JScrollPane members_tableModel;
     private javax.swing.JPanel members_updateButton;
     private javax.swing.JLabel members_updateLabel;
