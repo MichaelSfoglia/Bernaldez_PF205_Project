@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2025 at 03:07 AM
+-- Generation Time: May 09, 2025 at 01:35 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,8 @@ CREATE TABLE `dashboard_members` (
 
 INSERT INTO `dashboard_members` (`member_id`, `member_name`, `member_password`, `member_position`, `member_email`, `member_contact`, `member_status`) VALUES
 (1, 'Michael', 'iktsuarpok', 'Admin', 'betest@gmail.com', 912, 'Active'),
-(4, 'test', 'NyaDNd1pMQRb3N+SYj/4GaZCRLU9DnRtQ4eXNJ1NpXg=', 'Admin', 'testtest', 435435345, 'Active');
+(4, 'test', 'NyaDNd1pMQRb3N+SYj/4GaZCRLU9DnRtQ4eXNJ1NpXg=', 'Admin', 'testtest', 435435345, 'Active'),
+(5, 'usertest', 'OtNhk27Z742DXXRa3yTXGRhueE7G/ppSXusARYg9X5E=', 'User', 'usertest@', 12, 'Active');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +64,7 @@ ALTER TABLE `dashboard_members`
 -- AUTO_INCREMENT for table `dashboard_members`
 --
 ALTER TABLE `dashboard_members`
-  MODIFY `member_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `member_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
