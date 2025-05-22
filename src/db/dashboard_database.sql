@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD:src/db/dashboard_database.sql
 -- Generation Time: May 22, 2025 at 04:17 PM
+=======
+-- Generation Time: May 09, 2025 at 01:35 PM
+>>>>>>> 483f7c760c1dd1db7824384794c30c18e3ac488d:src/db/dashboard_members.sql
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +47,8 @@ CREATE TABLE `dashboard_members` (
 
 INSERT INTO `dashboard_members` (`member_id`, `member_name`, `member_password`, `member_position`, `member_email`, `member_contact`, `member_status`) VALUES
 (1, 'Michael', 'iktsuarpok', 'Admin', 'betest@gmail.com', 912, 'Active'),
-(4, 'test', 'NyaDNd1pMQRb3N+SYj/4GaZCRLU9DnRtQ4eXNJ1NpXg=', 'Admin', 'testtest', 435435345, 'Active');
+(4, 'test', 'NyaDNd1pMQRb3N+SYj/4GaZCRLU9DnRtQ4eXNJ1NpXg=', 'Admin', 'testtest', 435435345, 'Active'),
+(5, 'usertest', 'OtNhk27Z742DXXRa3yTXGRhueE7G/ppSXusARYg9X5E=', 'User', 'usertest@', 12, 'Active');
 
 -- --------------------------------------------------------
 
@@ -101,6 +106,7 @@ ALTER TABLE `recovery`
 -- AUTO_INCREMENT for table `dashboard_members`
 --
 ALTER TABLE `dashboard_members`
+<<<<<<< HEAD:src/db/dashboard_database.sql
   MODIFY `member_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -114,6 +120,9 @@ ALTER TABLE `dashboard_products`
 --
 ALTER TABLE `recovery`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT;
+=======
+  MODIFY `member_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> 483f7c760c1dd1db7824384794c30c18e3ac488d:src/db/dashboard_members.sql
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
