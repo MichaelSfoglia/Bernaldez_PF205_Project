@@ -7,12 +7,12 @@ import java.sql.*;
 import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 
-public class DashboardMembers extends javax.swing.JFrame {
+public class DashboardProducts extends javax.swing.JFrame {
 
     /**
      * Creates new form DashBoard
      */
-    public DashboardMembers() {
+    public DashboardProducts() {
         initComponents();
         displayData();
     }
@@ -20,8 +20,8 @@ public class DashboardMembers extends javax.swing.JFrame {
     public void displayData(){
         try{
             dbConnector dbc = new dbConnector();
-            ResultSet rs = dbc.getData("SELECT member_id, member_name, member_position, member_email, member_contact, member_status"
-                    + " FROM dashboard_members");
+            ResultSet rs = dbc.getData("SELECT product_id, product_name, product_position, product_email, product_contact, product_status"
+                    + " FROM dashboard_products");
             members_membersTable.setModel(DbUtils.resultSetToTableModel(rs));
             rs.close();
         }
@@ -66,7 +66,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Members");
+        jLabel1.setText("Products");
         members_header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 170, 10));
 
         dashboard_members.add(members_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 30));
@@ -84,14 +84,14 @@ public class DashboardMembers extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Position", "Email", "Contact Number", "Status"
+                "Name", "Type", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -285,10 +285,10 @@ public class DashboardMembers extends javax.swing.JFrame {
             try{
                 dbConnector dbc = new dbConnector();
                 TableModel tbl = members_membersTable.getModel();
-                ResultSet rs = dbc.getData("SELECT * FROM dashboard_members WHERE member_id = "+tbl.getValueAt(rowIndex, 0) +"");
+                ResultSet rs = dbc.getData("SELECT * FROM dashboard_products WHERE product_id = "+tbl.getValueAt(rowIndex, 0) +"");
                 if(rs.next()){                
-                    create.createuser_nameField.setText("member_username");
-                    create.createuser_passwordField.setText("member_password");
+                    create.createuser_nameField.setText("product_username");
+                    create.createuser_passwordField.setText("product_password");
                     create.createuser_typeBox.setSelectedItem(""+rs.getString("member_position"));
                     create.createuser_emailField.setText("member_email");
                     create.createuser_contactField.setText("member_email");
@@ -315,7 +315,27 @@ public class DashboardMembers extends javax.swing.JFrame {
     }//GEN-LAST:event_members_updateButtonMouseExited
 
     private void members_deleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_deleteButtonMouseClicked
-        // TODO add your handling code here:
+        int rowIndex = members_membersTable.getSelectedRow();
+        
+        if(rowIndex < 0){
+            JOptionPane.showMessageDialog(null, "Please select an item!");
+        }
+        else{
+            DashboardCreateUser create = new DashboardCreateUser();
+            try{
+                dbConnector dbc = new dbConnector();
+                TableModel tbl = members_membersTable.getModel();
+                ResultSet rs = dbc.getData("SELECT * FROM dashboard_products WHERE product_id = "+tbl.getValueAt(rowIndex, 0) +"");
+                if(rs.next()){                
+                    
+                    
+                    
+                }
+            }
+            catch(SQLException ex){
+                System.out.println("" + ex);
+            }
+        }
     }//GEN-LAST:event_members_deleteButtonMouseClicked
 
     private void members_deleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_members_deleteButtonMouseEntered
@@ -357,14 +377,22 @@ public class DashboardMembers extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DashboardMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardProducts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DashboardMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardProducts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DashboardMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardProducts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DashboardMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardProducts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -377,7 +405,7 @@ public class DashboardMembers extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DashboardMembers().setVisible(true);
+                new DashboardProducts().setVisible(true);
             }
         });
     }

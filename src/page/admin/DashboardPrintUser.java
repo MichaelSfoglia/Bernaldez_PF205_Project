@@ -5,6 +5,8 @@
  */
 package page.admin;
 
+import java.awt.Color;
+
 /**
  *
  * @author champ
@@ -28,43 +30,128 @@ public class DashboardPrintUser extends javax.swing.JFrame {
     private void initComponents() {
 
         dashboard_print = new javax.swing.JPanel();
-        members_container = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        members_header = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        print_container = new javax.swing.JPanel();
+        print_formContainer = new javax.swing.JPanel();
+        print_idLabel = new javax.swing.JLabel();
+        print_nameLabel = new javax.swing.JLabel();
+        print_emailLabel = new javax.swing.JLabel();
+        print_positionLabel = new javax.swing.JLabel();
+        print_contactLabel = new javax.swing.JLabel();
+        print_statusLabel = new javax.swing.JLabel();
+        print_backButton = new javax.swing.JPanel();
+        members_backLabel = new javax.swing.JLabel();
+        print_printButton = new javax.swing.JPanel();
+        print_printLabel = new javax.swing.JLabel();
+        print_header = new javax.swing.JPanel();
+        print_title = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         dashboard_print.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        members_container.setBackground(new java.awt.Color(183, 71, 52));
-        members_container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        print_container.setBackground(new java.awt.Color(183, 71, 52));
+        print_container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(132, 72, 79));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        print_formContainer.setBackground(new java.awt.Color(132, 72, 79));
+        print_formContainer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        print_formContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ID:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 70, 20));
+        print_idLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        print_idLabel.setForeground(new java.awt.Color(255, 255, 255));
+        print_idLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        print_idLabel.setText("ID:");
+        print_formContainer.add(print_idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 20));
 
-        members_container.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 250));
+        print_nameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        print_nameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        print_nameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        print_nameLabel.setText("Name: ");
+        print_formContainer.add(print_nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
 
-        dashboard_print.add(members_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 710, 380));
+        print_emailLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        print_emailLabel.setForeground(new java.awt.Color(255, 255, 255));
+        print_emailLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        print_emailLabel.setText("Email: ");
+        print_formContainer.add(print_emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 70, 20));
 
-        members_header.setBackground(new java.awt.Color(121, 51, 65));
-        members_header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        print_positionLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        print_positionLabel.setForeground(new java.awt.Color(255, 255, 255));
+        print_positionLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        print_positionLabel.setText("Position: ");
+        print_formContainer.add(print_positionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 70, 20));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Print User Info");
-        members_header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 170, 10));
+        print_contactLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        print_contactLabel.setForeground(new java.awt.Color(255, 255, 255));
+        print_contactLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        print_contactLabel.setText("Contact Number: ");
+        print_formContainer.add(print_contactLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 130, 20));
 
-        dashboard_print.add(members_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 30));
+        print_statusLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        print_statusLabel.setForeground(new java.awt.Color(255, 255, 255));
+        print_statusLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        print_statusLabel.setText("Status: ");
+        print_formContainer.add(print_statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 50, 20));
+
+        print_container.add(print_formContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 190));
+
+        print_backButton.setBackground(new java.awt.Color(132, 72, 79));
+        print_backButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        print_backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                print_backButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                print_backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                print_backButtonMouseExited(evt);
+            }
+        });
+        print_backButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        members_backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        members_backLabel.setForeground(new java.awt.Color(255, 255, 255));
+        members_backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        members_backLabel.setText("Back");
+        print_backButton.add(members_backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
+
+        print_container.add(print_backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 130, 50));
+
+        print_printButton.setBackground(new java.awt.Color(132, 72, 79));
+        print_printButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
+        print_printButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                print_printButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                print_printButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                print_printButtonMouseExited(evt);
+            }
+        });
+        print_printButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        print_printLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        print_printLabel.setForeground(new java.awt.Color(255, 255, 255));
+        print_printLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        print_printLabel.setText("Print");
+        print_printButton.add(print_printLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
+
+        print_container.add(print_printButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 130, 50));
+
+        dashboard_print.add(print_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 530, 210));
+
+        print_header.setBackground(new java.awt.Color(121, 51, 65));
+        print_header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        print_title.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        print_title.setForeground(new java.awt.Color(255, 255, 255));
+        print_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        print_title.setText("Print User Info");
+        print_header.add(print_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 170, 10));
+
+        dashboard_print.add(print_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,6 +166,32 @@ public class DashboardPrintUser extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void print_backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_backButtonMouseClicked
+        DashboardAdmin adminPage = new DashboardAdmin();
+        adminPage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_print_backButtonMouseClicked
+
+    private void print_backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_backButtonMouseEntered
+        print_backButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_print_backButtonMouseEntered
+
+    private void print_backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_backButtonMouseExited
+        print_backButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_print_backButtonMouseExited
+
+    private void print_printButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_printButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_print_printButtonMouseClicked
+
+    private void print_printButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_printButtonMouseEntered
+        print_printButton.setBackground(new Color(192, 132, 139));
+    }//GEN-LAST:event_print_printButtonMouseEntered
+
+    private void print_printButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_printButtonMouseExited
+        print_printButton.setBackground(new Color(132, 72, 79));
+    }//GEN-LAST:event_print_printButtonMouseExited
 
     /**
      * @param args the command line arguments
@@ -117,10 +230,19 @@ public class DashboardPrintUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel dashboard_print;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel members_container;
-    private javax.swing.JPanel members_header;
+    private javax.swing.JLabel members_backLabel;
+    private javax.swing.JPanel print_backButton;
+    private javax.swing.JLabel print_contactLabel;
+    private javax.swing.JPanel print_container;
+    private javax.swing.JLabel print_emailLabel;
+    private javax.swing.JPanel print_formContainer;
+    private javax.swing.JPanel print_header;
+    private javax.swing.JLabel print_idLabel;
+    private javax.swing.JLabel print_nameLabel;
+    private javax.swing.JLabel print_positionLabel;
+    private javax.swing.JPanel print_printButton;
+    private javax.swing.JLabel print_printLabel;
+    private javax.swing.JLabel print_statusLabel;
+    private javax.swing.JLabel print_title;
     // End of variables declaration//GEN-END:variables
 }

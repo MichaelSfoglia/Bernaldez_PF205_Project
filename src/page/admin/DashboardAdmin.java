@@ -23,13 +23,12 @@ public class DashboardAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dashboard_members = new javax.swing.JPanel();
-        members_header = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        members_container = new javax.swing.JPanel();
+        dashboard_admin = new javax.swing.JPanel();
+        admin_header = new javax.swing.JPanel();
+        admin_title = new javax.swing.JLabel();
+        admin_container = new javax.swing.JPanel();
         adminhome_membersButton = new javax.swing.JPanel();
         adminhome_membersLabel = new javax.swing.JLabel();
-        adminhome_filler = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         adminhome_productsButton = new javax.swing.JPanel();
         adminhome_productsLabel = new javax.swing.JLabel();
         adminhome_logoutButton = new javax.swing.JPanel();
@@ -45,21 +44,21 @@ public class DashboardAdmin extends javax.swing.JFrame {
             }
         });
 
-        dashboard_members.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        dashboard_admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        members_header.setBackground(new java.awt.Color(121, 51, 65));
-        members_header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        admin_header.setBackground(new java.awt.Color(121, 51, 65));
+        admin_header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Home");
-        members_header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 170, 10));
+        admin_title.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        admin_title.setForeground(new java.awt.Color(255, 255, 255));
+        admin_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        admin_title.setText("Home");
+        admin_header.add(admin_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 170, 10));
 
-        dashboard_members.add(members_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 30));
+        dashboard_admin.add(admin_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 30));
 
-        members_container.setBackground(new java.awt.Color(183, 71, 52));
-        members_container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        admin_container.setBackground(new java.awt.Color(183, 71, 52));
+        admin_container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         adminhome_membersButton.setBackground(new java.awt.Color(132, 72, 79));
         adminhome_membersButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -82,8 +81,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_membersLabel.setText("Members");
         adminhome_membersButton.add(adminhome_membersLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_membersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 50));
-        members_container.add(adminhome_filler, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, -30, 10, 410));
+        admin_container.add(adminhome_membersButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 50));
 
         adminhome_productsButton.setBackground(new java.awt.Color(132, 72, 79));
         adminhome_productsButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -106,7 +104,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_productsLabel.setText("Products");
         adminhome_productsButton.add(adminhome_productsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 50));
+        admin_container.add(adminhome_productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 50));
 
         adminhome_logoutButton.setBackground(new java.awt.Color(132, 72, 79));
         adminhome_logoutButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 132, 139)));
@@ -129,7 +127,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_logoutLabel.setText("Logout");
         adminhome_logoutButton.add(adminhome_logoutLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 30));
 
-        members_container.add(adminhome_logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 130, 50));
+        admin_container.add(adminhome_logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 130, 50));
 
         jPanel1.setBackground(new java.awt.Color(132, 72, 79));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 132, 139), 1, true));
@@ -141,15 +139,15 @@ public class DashboardAdmin extends javax.swing.JFrame {
         adminhome_nameDisplay.setText("[NAME]");
         jPanel1.add(adminhome_nameDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 30));
 
-        members_container.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 360));
+        admin_container.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 360));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Welcome Admin!");
-        members_container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 130, -1));
+        admin_container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 130, -1));
 
-        dashboard_members.add(members_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 340, 380));
+        dashboard_admin.add(admin_container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 340, 380));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,14 +155,14 @@ public class DashboardAdmin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(dashboard_members, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dashboard_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(dashboard_members, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dashboard_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -276,7 +274,9 @@ public class DashboardAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.Box.Filler adminhome_filler;
+    private javax.swing.JPanel admin_container;
+    private javax.swing.JPanel admin_header;
+    private javax.swing.JLabel admin_title;
     private javax.swing.JPanel adminhome_logoutButton;
     private javax.swing.JLabel adminhome_logoutLabel;
     private javax.swing.JPanel adminhome_membersButton;
@@ -284,11 +284,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel adminhome_nameDisplay;
     private javax.swing.JPanel adminhome_productsButton;
     private javax.swing.JLabel adminhome_productsLabel;
-    private javax.swing.JPanel dashboard_members;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel dashboard_admin;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel members_container;
-    private javax.swing.JPanel members_header;
     // End of variables declaration//GEN-END:variables
 }
